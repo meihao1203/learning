@@ -1,0 +1,8 @@
+a:a.c b.c
+	gcc a.c -o a
+	gcc b.c -o b
+.PHONY:rebuild clean
+rebuild:
+	make clean a
+clean:
+	rm a b 

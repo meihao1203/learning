@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<sys/types.h>
+#include<sys/stat.h>
+#include<fcntl.h>
+#include<strings.h>
+#include<sys/select.h>
+#include<sys/time.h>
+#include<time.h>
+#include<unistd.h>
+#include<string.h>
+int main(int argc,char **argv)
+{
+	if(3!=argc)
+	{
+		printf("error argcs\n");
+		return -1;
+	}
+	int fdr = open(argv[1],O_RDONLY);
+	int fdw = open(argv[2],O_WRONLY);
+	printf("fdr=%d fdw=%d\n",fdr,fdw);
+	char buf[128];
+	fd_set rdset;
+	int ret;
+	while(1)
+	{
+		FD_ZERO(&rdset);
+		FD_SET(0,&rdset);
+		FD_SET(fdr,&rdset);
+		ret = select(fdw+1,&rdset,NULL,NULL,NULL);
+		if(ret>0)
+		{
+			if( FD_ISSET(0,&rdset) )
+			{
+				bzero(buf,sizeof(buf));
+				read(0,buf,sizeof(buf));
+				write(fdw,buf,strlen(buf)-1);
+			}
+			if( FD_ISSET(fdr,&rdset) )
+			{
+				bzero(buf,sizeof(buf));
+				read(fdr,buf,sizeof(buf));
+				printf("b:%s\n",buf);
+			}
+		}
+	}
+	close(fdr);
+	close(fdw);
+	return 0;
+}
