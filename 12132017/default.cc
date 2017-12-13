@@ -7,7 +7,7 @@
 #include<iostream>
 using std::cout;
 using std::endl;
-//编译带上-D meihao 就要报错，两个一样的函数 
+//编译不带上-D meihao 就要报错，两个一样的函数 
 #ifdef meihao
 int add(int a,int b)
 {
