@@ -50,15 +50,26 @@ namespace C
 
 	}
 }
+//int num = 777;   //和匿名命名空间冲突
 int main(void)
 {
-	cout << num << endl;	//默认访问的是全局的num
-	cout << ::num << endl;
-	cout << mh::num << endl;
-	mh::func1();
-	A::funcA();
-	B::funcB();
+	cout << num << endl;	//默认访问的是全局的num，在这里是匿名空间中的num 666
+	cout << ::num << endl;  //666
+	cout << mh::num << endl;//1
+	mh::func1();   
+	A::funcA();     
+	B::funcB();   
 	C::funcc();
 	return 0;
 }
-
+//666
+//666
+//1
+//func1()
+//A::funcA()
+//A::funcA()
+//B::funcB()
+//4000
+//4000
+//666
+//1
