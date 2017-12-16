@@ -58,3 +58,4 @@ int main(void)
 //IBM构造函数
 //IBM析构函数
 //联想析构函数
+
