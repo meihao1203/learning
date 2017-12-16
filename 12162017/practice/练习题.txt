@@ -1,0 +1,88 @@
+1. 函数func的定义如下：
+		void func(cont int & v1, const int & v2)
+		{
+				std::cout << v1 << ' ';
+				std::cout << v2 << ' ';
+		}
+		
+	在Visual Studio开发环境下，以下代码输出结果为(D)
+		
+		int main(int argc, char *argvcxd[])
+		{
+				int i = 0;
+				func(++i, i++);  //2 0
+				return 0;
+		}
+		
+		A. 0 1
+		B. 1 2
+		C. 2 1
+		D. 2 0
+		E. 0 2
+		F. 1 0
+	
+2. 下面有关c++内存分配堆栈说法错误的是？(B)
+	A. 对于栈来讲，是由编译器自动管理，无需我们手工控制；
+		 对于堆来说，释放工作由程序员控制
+	B. 对于栈来讲，生长方向是向上的，也就是内存地址增加的方向；
+		 对于堆来讲，它的生长方向是向下的，是向着内存地址减小的方向增长
+	C. 对于堆来讲，频繁的new/delete势必会造成内存空间的不连续，从而造成
+		 大量的碎片，使程序效率降低．对于栈来讲，则不存在这个问题
+	D. 一般来讲，在32位系统下，堆内存可以达到4G的空间，但是对于栈来讲，
+	　 一般都是有一定的空间大小的．
+	
+3. 对于下面的代码，说法正确的是(C)
+			char * s1 = "Hello world";
+			char s2[] = "Hello world";
+			s1[2] = 'E';      //1  
+			s2[2] = 'E';      //2
+			*(s1 + 2) = 'E';  //3
+			*(s2 + 2) = 'E';  //4
+		A. 语句2, 4 非法
+		B. 语句3, 4 非法
+		C. 语句1, 3 非法
+		D. 仅语句1非法
+	  E. 仅语句2非法
+	  F. 语句1~4都是合法的
+  
+4. 具有相同类型的指针类型变量p与数组a, 不能进行的操作是(D)
+		A. p = a;
+		B. *p = a[0];
+		C. p = &a[0];
+		D. p = &a;
+		
+5. 给出以下定义，下列哪些操作是合法的？(A,C)
+		
+		const char * p1 = "hello";
+		char * const p2 = "world";
+		
+		A. p1++;
+		B. p1[2] = 'w';
+		C. p2[2] = 'l';
+		D. p2++
+
+6.
+			#pragma pack(2)
+			
+			class BU
+			{
+					int number;
+					union UBffer
+					{
+							char buffer[13];
+							int number;
+					}ubuf;
+					
+					void foo(){}
+					
+					typedef char *(*f)(void*);
+					
+					enum{hdd, ssd, blueray} disk;
+			}bu;
+
+	sizeof(bu)的值是(C)
+		A. 20
+		B. 21
+		C. 22
+		D. 23	
+		E. 24
