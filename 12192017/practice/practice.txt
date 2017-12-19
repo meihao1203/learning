@@ -1,0 +1,52 @@
+1. 下面哪种说法是错误的？( B )
+    A. 析构函数有且仅有一个
+    B. 析构函数和构造函数一样可以有形参
+    C. 析构函数的功能是用来释放一个对象
+    D. 析构函数无任何函数类型
+    
+2. 下面关于类和对象的描述中，错误的是( A )
+    A. 类就是C语言中的结构体类型，对象就是C语言中的结构体变量
+    B. 类和对象之间的关系是抽象和具体的关系
+    C. 对象是类的实例，一个对象必须属于一个已知的类
+    D. 类是具有共同行为的若干对象的统一描述体
+    
+3. 若PAT是一个类，则程序运行时，语句 "PAT (*ad)[3];" 会调用
+    PAT的构造函数次数是( C )   //只是定义一个对象数组指针
+    A. 2 
+    B. 3
+    C. 0
+    D. 1    
+  
+4. 假定CSomething是一个类，执行下面这些语句之后，内存里创建了( E )个
+    CSomething对象
+    
+    CSomething a();    //不会；CSomething a;  会调用构造函数; 
+
+//我猜测啊，编译器把这个定义误解为一个函数声明
+    CSomething b(2);   //会
+    CSomething c[3];   //会
+    CSomething &ra = b;//不会调用构造函数
+    CSomething d = b;  //会,不过是拷贝构造函数
+    CSomething *pA = c;//不会,定义了指针指向，并没有创造对象
+    CSomething *p = new CSomething(4);//会
+    
+    A. 10   B. 9   C. 8   D. 7   E. 6   F.  5
+    
+5. 有一个类A, 其数据成员如下：
+        class A
+        {
+        ...
+        private:
+            int a;
+        public:
+            const int b;
+            float *& c;
+            static const char * d;
+            static double * e;
+        };
+   则构造函数中，成员变量一定要通过初始化列表来初始化的是 ( C )
+    A. a b c
+    B. b c
+    C. b c d e
+    D. b c d
+    E. b
