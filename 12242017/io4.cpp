@@ -10,7 +10,8 @@
 using namespace std;
 int main()
 {
-	//ofstream out("file.bat",ios::ate);    //打开文件并定位到文件末尾;验证：并不能定位到文件尾,直接打开文件，然后删除了文件原有的信息
+	//ofstream out("file.bat",ios::ate);    //打开文件并定位到文件末尾;
+	//验证：并不能定位到文件尾,直接打开文件，然后删除了文件原有的信息
 	//ios::ate只对输入流起作用
 	ofstream out("file.bat",ios::app);
 	if(!out.good())

@@ -10,6 +10,7 @@
 //附加到此Category的Appender；
 //每个Append都包含一个Layout,该Layout定义了这个Appender上日志的格式。
 //
+//
 //步骤：
 //1. 创建一个Appender，并指定其包含的Layout；
 //2. 从系统中得到Category的根，将Appender添加到该Category中；
