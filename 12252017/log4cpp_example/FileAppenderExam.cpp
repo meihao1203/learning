@@ -36,9 +36,7 @@ int main(int argc,char **argv)
 	//设置输出日志
 	Category& root = Category::getRoot().getInstance("RootName");
 	root.addAppender(fileAppender);
-	root.setPriority(Priority::DEBUG);
 	root.addAppender(rollingfileAppender);
-	root.setPriority(Priority::DEBUG);
 
 	//写日志
 	for(int i=0;i<100;i++)
