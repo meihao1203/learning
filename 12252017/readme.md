@@ -1,13 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<style>
-			body, table{font-family: Î¢ÈíÑÅºÚ; font-size: 10pt}
-			table{border-collapse: collapse; border: solid gray; border-width: 2px 0 2px 0;}
-			th{border: 1px solid gray; padding: 4px; background-color: #DDD;}
-			td{border: 1px solid gray; padding: 4px;}
-			tr:nth-child(2n){background-color: #f8f8f8;}
-		</style>
 	</head>
 	<body>
 		<div>
