@@ -6,11 +6,11 @@
  
 //系统中可以有多个Category，它们都继承自同一个跟root，每个Category负责记录自己的日志；
 //每个Category可以添加多个Appender(目的地，日志要输出到哪),每个Appender制定了一个日志的目的地；
-//这个目的地可以是文件，字符流或者windws日志，当Category记录一条日志时，该日志被写入所有
+//这个目的地可以是文件，字符流或者windows日志，当Category记录一条日志时，该日志被写入所有
 //附加到此Category的Appender；
 //每个Append都包含一个Layout,该Layout定义了这个Appender上日志的格式。
 //
-//步凑：
+//步骤：
 //1. 创建一个Appender，并指定其包含的Layout；
 //2. 从系统中得到Category的根，将Appender添加到该Category中；
 //3. 设置Category的优先级；
