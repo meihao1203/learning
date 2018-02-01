@@ -154,8 +154,6 @@ int main()
         cout<<s1.useCount()<<endl;
         return 0;
 }
-
-
 //String(const char*)
 //String(const String&)
 //charProxy operator[](int)
