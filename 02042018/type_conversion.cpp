@@ -10,6 +10,7 @@ class anotherPoint;
 class point
 {
 	public:
+		// explicit 禁止这种隐士转
 		point(int x=0,int y=0):_x(x),_y(y)
 		{
 			cout<<"point(int,int)"<<endl;
