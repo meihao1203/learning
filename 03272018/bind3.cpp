@@ -19,7 +19,7 @@ int main()
 	auto f1 = bind(&foo::sum,fo,_1,_2);
 	f1(1,2);
 	fo.data = 12;
-	auto f2 = bind(&foo::data,&fo);  // &fo,不要写fo，这样效率
+	auto f2 = bind(&foo::data,&fo);  // &fo,不要写fo，这样效率不高，会调用拷贝构造函数
 	cout<<f2(10)<<endl;  // 12
 	auto f3 = bind(&foo::data,_1);  // 编译通过
 	f3(fo);
