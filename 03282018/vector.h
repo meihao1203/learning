@@ -32,11 +32,11 @@ class vector
 		class proxy
 		{
 			public:
-				proxy(vector<T> v,int index):_v(v),_index(index){}
-				T& operator=(const T elem);
-				operator T(){  return _elems[_index];  }
+				proxy(vector<T>& v,int index):_v(v),_index(index){}  // 这里形参一定要是引用，传本身啊，不然最后_v._elems[_index]就是错的。浅拷贝
+				T& operator=(const int elem);
+				operator T(){  return _v._elems[_index];  }
 			private:
-				vector<T>& _v;
+				vector<T>& _v;  // 这个地方也是引用
 				int _index;
 		};
 };

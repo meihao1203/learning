@@ -66,14 +66,11 @@ void vector<T>::pop_back()
 template<typename T>
 typename vector<T>::proxy vector<T>::operator[](int index)
 {
-	cout<<"cc"<<endl;
-	return proxy(*this,index);
+	return proxy(*this,index);  // 嵌套类不传引用这里出作用域释放了，后面的=什么的没错误，但是执行就报错
 }
 template<typename T>
-T& vector<T>::proxy::operator=(const T elem)
+T& vector<T>::proxy::operator=(const int elem)
 {
-	cout<<"BB"<<endl;
-	_v::_elems[_index] = elem;
-	cout<<"bb"<<endl;
-	return _elems[_index];
+	_v._elems[_index] = elem;
+	return _v._elems[_index];
 }
