@@ -4,6 +4,7 @@
  /// @date    2018-04-04 09:45:48
  ///
  
+//测试虚表的存在
 #include<iostream>
 using namespace std;
 class A
