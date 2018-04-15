@@ -21,14 +21,14 @@ class Subject
 		void notify();
 		virtual int getState();
 		virtual void setState(state);
-	private:
+	protected:
 		state _subjectState;
 		list<Observer*> _observerList;
 };
 class ConcreteSubject:public Subject
 {
 	public:
-		ConcreteSubject();
+		ConcreteSubject(){}
 		int getState();
 		void setState(state);
 		virtual ~ConcreteSubject(){}
@@ -36,9 +36,10 @@ class ConcreteSubject:public Subject
 class Observer
 {
 	public:
+		Observer():_obState(-1){}
 		virtual void update(Subject*) = 0;
 		virtual ~Observer(){}
-	private:
+	protected:
 		state _obState;
 };
 class ConcreteObserver:public Observer
