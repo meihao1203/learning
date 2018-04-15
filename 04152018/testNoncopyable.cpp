@@ -1,4 +1,4 @@
- ///
+ //
  /// @file    testNoncopyable.cpp
  /// @author  meihao1203(meihao19931203@outlook.com)
  /// @date    2018-04-15 11:38:34

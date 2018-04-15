@@ -33,6 +33,7 @@ int main()
 
 	A a;
 	function<int(int)> test2 = bind(&A::func,&a,30,_1);  // 前面声明，就不用写placeholders
+	// 对象传值和传地址都可
 	cout<<test2(40)<<endl;
 
 	function<int(int,int)> test3 = func;
