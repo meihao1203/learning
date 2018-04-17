@@ -57,3 +57,13 @@ int main()
 
 	return 0;
 }
+//prodece a num 98
+//consumer a num 98
+//prodece a num 20
+//consumer a num 20
+//prodece a num 32
+//prodece a num 37
+//consumer a num 32
+//prodece a num 16
+//consumer a num 37
+//consumer a num 16
