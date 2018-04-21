@@ -25,6 +25,6 @@ namespace meihao
 			int _fd;
 			bool _isStarted;
 			EventfdCallback _cb;
-	}；
+	};
 };
 #endif

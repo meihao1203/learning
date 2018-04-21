@@ -22,19 +22,30 @@ namespace meihao
 		}
 		return fd;
 	}
-	Eventfd(EventfdCallback cb):_cb(cb)
+	Eventfd::Eventfd(EventfdCallback cb):_cb(cb)
 								,_isStarted(false)
-								_fd(getEventfd())
+								,_fd(getEventfd())
 	{
 
 	}
-	void Eventfd::
+	void Eventfd::handleRead()
+	{
+		uint64_t tmp;
+		int ret = read(_fd,&tmp,sizeof(tmp));
+		if(ret!=sizeof(tmp))
+		{
+			cout<<"handleRead read error!\n";
+		}
+	}
 	void Eventfd::start()
 	{
 		_isStarted = true;
 		struct pollfd fds;
 		fds.fd = _fd;
 		fds.events = POLLIN;
+		time_t t;
+		time(&t);
+		cout<<"start time "<<ctime(&t)<<endl;
 		while(_isStarted)
 		{
 			int ret = poll(&fds,1,5000);
@@ -54,10 +65,26 @@ namespace meihao
 			}
 			else if(fds.revents==POLLIN)
 			{
+				time_t t;
+				time(&t);
+				cout<<"poll trigger time "<<ctime(&t);
 				handleRead();  // 读走计数器的值
 				if(_cb)
 					_cb();
 			}
 		}
+	}
+	void Eventfd::stop()
+	{
+		_isStarted = false;
+	}
+	void Eventfd::wakeup()
+	{
+		uint64_t tmp = 1;
+		write(_fd,&tmp,sizeof(tmp));
+	}
+	Eventfd::~Eventfd()
+	{
+
 	}
 };
