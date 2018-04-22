@@ -44,3 +44,11 @@ int main()
 	}
 	return 0;
 }
+//this is server
+//hello
+//recv hello
+//
+//world
+//recv world
+//
+//^C
