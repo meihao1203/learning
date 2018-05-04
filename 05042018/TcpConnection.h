@@ -14,11 +14,19 @@ namespace meihao
 {
 	class TcpConnection
 	{
+		public:
+			TcpConnection(int connectfd);
+			~TcpConnection();
+			string receive();
+			void send(const string& msg);
+			void shutdown();
+			string toString()const;  // 返回服务端IP、port和客户端IP、port
 		private:
 			Socket _sock;
 			SocketIO _sockIO;
 			InetAddress _localAddress;
-			InetAddresss
+			InetAddress _peerAddress;
+			bool _isShutdownWrite;
 	};
 };
 #endif
