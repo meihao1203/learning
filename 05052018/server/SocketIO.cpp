@@ -78,7 +78,7 @@ namespace meihao
 			for(int idx=0;idx<=nread;++idx)
 			{
 				//读到换行表示读完一行
-				if(ptmp[idx]=='\0')  // 输入窗口输入回车读到\0,这里写\n，if一直进不去
+				if(ptmp[idx]=='\0')  // 输入窗口输入字符串用string类型变量来接，回车读到\0表示结束,这里写\n，if一直进不去
 				{
 					if(readn(ptmp,idx)!=idx)  // 这是后才真正的把内核缓冲区的一行数据读走,idx处是\n，所以要读idx+1
 					{
