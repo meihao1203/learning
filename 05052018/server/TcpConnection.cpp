@@ -1,4 +1,4 @@
- ///
+ //
  /// @file    TcpConnection.cpp
  /// @author  meihao1203(meihao19931203@outlook.com)
  /// @date    2018-05-05 09:29:05
@@ -31,18 +31,18 @@ namespace meihao
 	{
 		char buf[1024];
 		memset(buf,0,sizeof(buf));
-		_sockIO.readLine(buf,sizeof(buf));
+		int ret = _sockIO.readLine(buf,sizeof(buf));
 		return string(buf);
 	}
 	void TcpConnection::send(const string& msg)
 	{
-		_sockIO.writen(msg.c_str(),msg.size());
+		int ret = _sockIO.writen(msg.c_str(),msg.size());
 	}
 	void TcpConnection::shutdown()
 	{
 		if(!_isShutdownWrite)
 		{
-			_sock.shutdownWrite();
+			_sock.shutdownWrite();		// 这里就是只断开接收到的描述符，不断开服务器端用来监听的描述符
 			_isShutdownWrite = true;
 		}
 	}	

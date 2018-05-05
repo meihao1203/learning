@@ -24,7 +24,8 @@ namespace meihao
 		int tmp = 0;
 		while(nleft>0)
 		{
-			tmp = read(_fd,btmp,sizeof(buf));
+			tmp = read(_fd,btmp,nleft);
+			cout<<tmp<<endl;
 			if(-1==tmp)
 			{
 				if(errno==EINTR)
@@ -47,7 +48,7 @@ namespace meihao
 		int tmp = 0;
 		while(nleft>0)
 		{
-			tmp = write(_fd,btmp,sizeof(buf));
+			tmp = write(_fd,btmp,nleft);
 			if(-1==tmp)
 			{
 				if(errno==EINTR)
@@ -80,7 +81,7 @@ namespace meihao
 				//读到换行表示读完一行
 				if(ptmp[idx]=='\n')
 				{
-					if(readn(ptmp,idx+1)!=idx+1)  // 这是后才真正的把内核缓冲区的一行数据读走,idx处是\n，所以要读idx+1
+					if(readn(ptmp,idx)!=idx)  // 这是后才真正的把内核缓冲区的一行数据读走,idx处是\n，所以要读idx+1
 					{
 						return -1;
 					}
