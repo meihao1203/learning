@@ -1,0 +1,26 @@
+select
+	1、int select(int nfds, fd_set *readfds, fd_set *writefds,
+			                  fd_set *exceptfds, struct timeval *timeout);
+	2、void FD_CLR(int fd, fd_set *set);
+	3、int  FD_ISSET(int fd, fd_set *set);
+	4、void FD_SET(int fd, fd_set *set);
+	5、void FD_ZERO(fd_set *set);
+
+fd_set rdset;
+FD_ZERO(&rdset);
+FD_SET(fd,&rdset);
+while(1)
+{
+	FD_ZERO(&rdset);  //每次使用之前都要清空
+	FD_SET(fd,&rdset);  //集合中加入要监听的描述符
+	...  //可以监听多个，但是有上限，1024
+	int ret = select(MAXFD+1,&rdset,NULL,NULL,NULL);  // 第一个参数是最大描述符+1
+	if(ret>0)
+	{
+		if(FD_ISSET(fd,&rdset))  //判断描述符fd是否在rdset集合里面，是就表示有数据可读
+		{}
+	}
+}
+
+epoll
+	1、
