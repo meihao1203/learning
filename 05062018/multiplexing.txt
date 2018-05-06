@@ -1,0 +1,110 @@
+select
+	1、int select(int nfds, fd_set *readfds, fd_set *writefds,
+			                  fd_set *exceptfds, struct timeval *timeout);
+	2、void FD_CLR(int fd, fd_set *set);
+	3、int  FD_ISSET(int fd, fd_set *set);
+	4、void FD_SET(int fd, fd_set *set);
+	5、void FD_ZERO(fd_set *set);
+
+-------------------------------------------------------------------------------------------
+
+fd_set rdset;
+FD_ZERO(&rdset);
+FD_SET(fd,&rdset);
+while(1)
+{
+	FD_ZERO(&rdset);  //每次使用之前都要清空
+	FD_SET(fd,&rdset);  //集合中加入要监听的描述符
+	...  //可以监听多个，但是有上限，1024
+	int ret = select(MAXFD+1,&rdset,NULL,NULL,NULL);  // 第一个参数是最大描述符+1
+	if(ret>0)
+	{
+		if(FD_ISSET(fd,&rdset))  //判断描述符fd是否在rdset集合里面，是就表示有数据可读
+		{}
+	}
+}
+
+
+
+
+epoll
+	1、 int epoll_create(int size);
+	2、int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);
+	3、int epoll_wait(int epfd, struct epoll_event *events,
+			                      int maxevents, int timeout);
+
+-------------------------------------------------------------------------------------------
+
+int epfd = epoll_create(1);  // 创建一个句柄，区别select内部实现，epoll用的链表，参数非0即可
+struct epoll_event event,evs[MAXFD];  // 第二个数组是epoll_wait的传出参数
+event.events = EPOLLIN;  // 监听描述符可读事件
+event.data.fd = fd;  // 要监听的描述符是fd
+epoll_ctl(epfd,EPOLL_CTL_ADD,fd,&event);  // 注册事件
+event.events = EPOLLIN;
+event.data.fd = 0;  // 终端标准输入
+epoll_ctl(epfd,EPOLL_CTL_ADD,0,&event);
+while(1)
+{
+	int ret = epoll_wait(epfd,evs,NUM+1,-1);  //系统中最大能相应NUM个fd,再加上0;
+	// -1 永久阻塞，知道事件发生
+	if(ret>0)
+	{
+		for(int i=0;i<ret;++i)
+		{
+			if(evs[i].events == EPOLLIN && evs[i].data.fd == fd)
+			{}
+		}
+	}
+}
+event.events == EPOLLIN;
+event.data.fd = fd;
+epoll_ctl(epfd,EPOLL_CTL_DEL,fd,&events)  // 删除一个fd
+
+
+
+
+poll
+	1、int poll(struct pollfd *fds, nfds_t nfds, int timeout);
+
+-------------------------------------------------------------------------------------------
+
+int eventfd(unsigned int initval, int flags);  // 第一个参数是计数器的初始值，第二个为0
+
+int efd = eventfd(0,0);
+if(!fork())
+{// 子进程
+	int data = 1;
+	write(efd,&data,sizeof(int));
+}
+else
+{// 父进程
+	struct pollfd ppfd;
+	ppfd.fd = efd;
+	ppfd.events = POLLIN;
+	poll(&ppfd,1,-1);  // 永久等待,计数器中写入数据非0的时候可读,等待过程中父进程睡眠(休眠)
+	int val;
+	read(efd,&val,sizeof(int));  // 读走数据,计数器自动清0
+}
+
+-------------------------------------------------------------------------------------------
+
+int timerfd_create(int clockid, int flags);
+int timerfd_settime(int fd, int flags,
+		                           const struct itimerspec *new_value,
+								   struct itimerspec *old_value);
+int timerfd = timerfd_create(CLOCK_REALTIME,0);
+struct itimerspec new_value;
+memset(&new_value,0,sizeof(itimerspec));
+new_value.it_value.tv_sec = 5;  // 设置初始到期时间
+new_value.it_interval.tv_sec = 3;  // 间隔时间
+timerfd_settime(timerfd,0,&new_value,NULL);
+
+struct pollfd ppfd;
+ppfd.fd = timerfd;
+ppfd.events = POLLIN;
+while(1)
+{
+	poll(&ppfd,1,-1);  // 永久等待，知道timerfd触发有数据可读
+	int tmp;
+	read(timerfd,&tmp,sizeof(int));  // 读走数据，不然定时器异常，一直触发
+}
