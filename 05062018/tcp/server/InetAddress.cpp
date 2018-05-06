@@ -29,6 +29,18 @@ namespace meihao
 	}
 	InetAddress::InetAddress(struct sockaddr_in addr)
 	{
-
+		_addr = addr;
+	}
+	const struct sockaddr_in* InetAddress::getInetAddressPtr()
+	{
+		return &_addr;
+	}
+	string InetAddress::ip()const
+	{
+		return string( inet_ntoa(_addr.sin_addr) );
+	}
+	unsigned short InetAddress::port()const
+	{
+		return ntohs(_addr.sin_port);
 	}
 };
