@@ -43,10 +43,10 @@ void test1()//对shared_ptr误用
 	point* p1 = new point(1,2);
 	shared_ptr<point> sp1(p1);
 	cout<<"sp1 use count="<<sp1.use_count()<<endl;
-	shared_ptr<point> sp2(p1);
+	shared_ptr<point> sp2(sp1);
 	//重复对一个对象托管,会导致多次调用析构函数
 	cout<<"sp1 use count="<<sp1.use_count()<<endl;
-	cout<<"sp1 use count="<<sp2.use_count()<<endl;
+	cout<<"sp2 use count="<<sp2.use_count()<<endl;
 }
 void test2()
 {
@@ -71,17 +71,17 @@ void test3()
 }
 int main()
 {
-	//test1();  // 这里test1()和test2()同时打开段错误，不知道为啥
+	test1();  // 这里test1()和test2()同时打开段错误，不知道为啥
 	cout<<"---------------"<<endl;
 	//test2();  // 和上面同样的原因，我猜测是前面开辟的堆内存没有释放，后面又要来delete,所以出现错误。 
 	cout<<"---------------"<<endl;
-	test3();
+	//test3();
 	return 0;
 }
 //point(int,int)
 //sp1 use count=1
 //sp1 use count=1
-//sp1 use count=1
+//sp2 use count=1
 //~point()
 //~point()
 //---------------
