@@ -7,6 +7,7 @@
 #ifndef __SOCKET_H__
 #define __SOCKET_H__
 #include<iostream>
+#include"InetAddress.h"
 using namespace std;
 namespace meihao
 {

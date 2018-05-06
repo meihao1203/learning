@@ -9,12 +9,13 @@
 #include<sys/types.h>
 #include<sys/socket.h>
 #include<errno.h>
+#include<unistd.h>
 using namespace std;
 #define handle_error(msg) \
 	do{\
 		perror(msg);\
 		_exit(-1);\
-		while(0);
+	}while(0);
 namespace meihao
 {
 	int getSocketfd()
@@ -22,10 +23,10 @@ namespace meihao
 		int sfd = socket(AF_INET,SOCK_STREAM,0);
 		if(-1==sfd)
 		{
-
+			handle_error("socket");
 		}
 	}
-	Socket::Socket()
+	Socket::Socket():_fd(getSocketfd())
 	{
 
 	}
