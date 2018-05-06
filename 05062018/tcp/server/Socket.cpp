@@ -14,7 +14,7 @@ using namespace std;
 #define handle_error(msg) \
 	do{\
 		perror(msg);\
-		_exit(-1);\
+		exit(-1);\
 	}while(0);
 namespace meihao
 {
@@ -28,6 +28,5 @@ namespace meihao
 	}
 	Socket::Socket():_fd(getSocketfd())
 	{
-
 	}
 };
