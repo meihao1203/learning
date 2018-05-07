@@ -25,12 +25,16 @@ int main()
 	sockio.readn(buf,sizeof(buf));
 	cout<<buf<<endl;
 #endif 
+#if 0
 	char buf[512] = "I am server!\n";
 	sockio.writen(buf,strlen(buf));
 	bzero(buf,sizeof(buf));
 	sockio.readline(buf,sizeof(buf));
 	cout<<buf;  //读一行自带回车
 	//最后结果及时对端输入
+#endif 
+	meihao::InetAddress test = meihao::Socket::getLocalAddress(socket.fd());
+	cout<<test.ip()<<test.port()<<endl;
 #if 1
 	while(true)
 	{
