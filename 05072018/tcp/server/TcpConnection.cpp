@@ -7,6 +7,13 @@
 #include"TcpConnection.h"
 #include<iostream>
 #include<strings.h>
+#include<stdlib.h>
+#include<errno.h>
+#define handle_error(msg) \
+	do{\
+		perror(msg);\
+		exit(-1);\
+	}while(0);
 using namespace std;
 namespace meihao
 {
@@ -25,6 +32,11 @@ namespace meihao
 	{
 		char buf[1024];
 		bzero(buf,sizeof(buf));
-		_sockIO.readline(buf,sizeof(buf));
+		int ret = _sockIO.readline(buf,sizeof(buf));
+		if(-1==ret)
+		{
+			handle_error("recvive");
+		}
+		return string(buf);
 	}
 };
