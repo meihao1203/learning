@@ -80,6 +80,14 @@ namespace meihao
 			handle_error("::accept");
 		}
 	}
+	void Socket::shutdownWrite()
+	{
+		int ret = ::shutdown(_fd,SHUT_WR);
+		if(-1==ret)
+		{
+			handle_error("::shutdown");
+		}
+	}
 	int Socket::fd()
 	{
 		return _fd;
