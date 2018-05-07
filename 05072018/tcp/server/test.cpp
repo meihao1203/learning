@@ -13,7 +13,7 @@
 using namespace std;
 int main()
 {
-	meihao::InetAddress inetAddr(8888);
+	meihao::InetAddress inetAddr(8848);
 	meihao::Socket socket;
 	socket.ready(inetAddr);  // 开启服务器端口
 	int newfd = socket.accept();
@@ -33,8 +33,8 @@ int main()
 	cout<<buf;  //读一行自带回车
 	//最后结果及时对端输入
 #endif 
-	meihao::InetAddress test = meihao::Socket::getLocalAddress(socket.fd());
-	cout<<test.ip()<<test.port()<<endl;
+	meihao::InetAddress test = meihao::Socket::getPeerAddress(newfd);
+	cout<<test.ip()<<"  "<<test.port()<<endl;
 #if 1
 	while(true)
 	{

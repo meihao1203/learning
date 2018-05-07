@@ -1,9 +1,9 @@
- ///
- /// @file    Socket.cpp
- /// @author  meihao1203(meihao19931203@outlook.com)
- /// @date    2018-05-06 20:51:21
- ///
- 
+///
+/// @file    Socket.cpp
+/// @author  meihao1203(meihao19931203@outlook.com)
+/// @date    2018-05-06 20:51:21
+///
+
 #include"Socket.h"
 #include<iostream>
 #include<sys/types.h>
@@ -96,20 +96,24 @@ namespace meihao
 	{
 		struct sockaddr_in addr;
 		bzero(&addr,sizeof(addr));
-		int ret = ::getsockname(fd,(struct sockaddr*)&addr,(socklen_t*)&addr);
+		int addrlen = sizeof(addr);
+		int ret = ::getsockname(fd,(struct sockaddr*)&addr,(socklen_t*)&addrlen);
 		if(-1==ret)
 		{
 			handle_error("::getsockname");
 		}
+		return InetAddress(addr);
 	}
 	InetAddress Socket::getPeerAddress(int fd)
 	{
 		struct sockaddr_in addr;
 		bzero(&addr,sizeof(addr));
-		int ret = ::getpeername(fd,(struct sockaddr*)&addr,(socklen_t*)&addr);
+		int addrlen = sizeof(addr);
+		int ret = ::getpeername(fd,(struct sockaddr*)&addr,(socklen_t*)&addrlen);
 		if(-1==ret)
 		{
 			handle_error("::getpeername");
 		}
+		return InetAddress(addr);
 	}
 };

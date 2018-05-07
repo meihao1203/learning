@@ -16,7 +16,7 @@ using namespace std;
 int main()
 {
 	int sfd = socket(AF_INET,SOCK_STREAM,0);
-	meihao::InetAddress inetaddr("127.1.1.1",8888);  // 所以这个也能链接上
+	meihao::InetAddress inetaddr("127.0.1.1",8848);  // 所以这个也能链接上
 	int ret = connect(sfd,(const struct sockaddr*)inetaddr.getInetAddressPtr(),(socklen_t)sizeof(struct sockaddr));
 	if(-1==ret)
 	{
