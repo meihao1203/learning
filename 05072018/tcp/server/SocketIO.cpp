@@ -66,7 +66,7 @@ namespace meihao
 			perror("recvPeek");
 		}
 	}
-	int SocketIO::readline(char* buf,int maxlen)
+	int SocketIO::readline(char* buf,int maxlen)  // 失败返回-1
 	{
 		int left = maxlen;
 		char* ptmp = buf;
@@ -78,10 +78,10 @@ namespace meihao
 			{
 				if(errno==EINTR)
 					continue;
-				break;
+				return -1;
 			}
 			else if(0==nread)
-				break;
+				return -1;
 			for(int idx=0;idx<nread;idx++)
 			{
 				if(ptmp[idx]=='\n')
