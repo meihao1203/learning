@@ -16,7 +16,7 @@ namespace meihao
 			SocketIO(int fd);
 			int readn(char* buf,int count);
 			int writen(const char* buf,int count);
-			int readline(char* buf,int maxlen);
+			int readline(char* buf,int maxlen);  // 成功返回读取字节数，失败返回-1
 		private:
 			int recvPeek(char* buf,int count);  // 预读取一行
 		private:
