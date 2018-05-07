@@ -9,7 +9,9 @@
 #include<sys/types.h>
 #include<sys/socket.h>
 #include<errno.h>
-#include<unistd.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<strings.h>
 using namespace std;
 #define handle_error(msg) \
 	do{\
@@ -28,5 +30,78 @@ namespace meihao
 	}
 	Socket::Socket():_fd(getSocketfd())
 	{
+	}
+	void Socket::setReuseAddr(bool on)
+	{
+		int val = on?1:0;
+		int ret = setsockopt(_fd,SOL_SOCKET,SO_REUSEADDR,(const void*)&val,sizeof(int));
+		if(-1==ret)
+		{
+			handle_error("setsockopt");
+		}
+	}
+	void Socket::setReusePort(bool on)
+	{
+		int val = on?1:0;
+		int ret = setsockopt(_fd,SOL_SOCKET,SO_REUSEPORT,(const void *)&val,sizeof(int));
+		if(-1==ret)
+		{
+			handle_error("setsockopt");
+		}
+	}
+	void Socket::bind(const InetAddress& addr)
+	{
+		int ret = ::bind(_fd,(const struct sockaddr*)&addr,(socklen_t)sizeof(addr));
+		if(-1==ret)
+		{
+			handle_error("::bind");
+		}
+	}
+	void Socket::listen()
+	{
+		int ret = ::listen(_fd,10);
+		if(-1==ret)
+		{
+			handle_error("::listen");
+		}
+	}
+	void Socket::ready(const InetAddress& addr)
+	{
+		setReuseAddr(true);
+		setReusePort(true);
+		bind(addr);
+		listen();
+	}
+	int Socket::accept()
+	{
+		int new_fd = ::accept(_fd,NULL,NULL);
+		if(-1==new_fd)
+		{
+			handle_error("::accept");
+		}
+	}
+	int Socket::fd()
+	{
+		return _fd;
+	}
+	InetAddress Socket::getLocalAddress(int fd)
+	{
+		struct sockaddr_in addr;
+		bzero(&addr,sizeof(addr));
+		int ret = ::getsockname(fd,(struct sockaddr*)&addr,(socklen_t*)&addr);
+		if(-1==ret)
+		{
+			handle_error("::getsockname");
+		}
+	}
+	InetAddress Socket::getPeerAddress(int fd)
+	{
+		struct sockaddr_in addr;
+		bzero(&addr,sizeof(addr));
+		int ret = ::getpeername(fd,(struct sockaddr*)&addr,(socklen_t*)&addr);
+		if(-1==ret)
+		{
+			handle_error("::getpeername");
+		}
 	}
 };
