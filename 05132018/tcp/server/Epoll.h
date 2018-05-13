@@ -9,11 +9,11 @@
 #include<iostream>
 #include"TcpConnection.h"
 #include<vector>
+#include<sys/epoll.h>
 #include<map>
 using namespace std;
 namespace meihao
 {
-	//typedef TcpConnection::TcpConnectionCallback TcpConnectionCallback;
 	class Epoll
 	{
 		public:
@@ -32,7 +32,7 @@ namespace meihao
 			int _efd;  // epoll_create得到的fd
 			int _sfd;  // sockfd,用来监听客户端请求
 			bool _isLooping;  // 是否还在监听客户端请求
-			vector<int> _events;  // 监听描述符事件数组
+			vector<struct epoll_event> _events;  // 监听描述符事件数组
 			map<int,TcpConnectionPtr> _mapConnections;  // 存放所有客户端请求的描述符和对应的智能指针
 			
 			TcpConnectionCallback _onConnectionCb;  // 为监听到的客户端设置连接的回调函数
