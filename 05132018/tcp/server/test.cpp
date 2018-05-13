@@ -85,7 +85,7 @@ int main()
 {
 	meihao::InetAddress inet("192.168.254.136",8848);
 	meihao::Socket socket;
-	socket.ready(inet);  // 开启服务器端口
+	socket.ready(inet);  //开启服务器端口
 	meihao::Epoll epoll(socket.fd());
 	epoll.epollSetConnectionCallback(onConnection);
 	epoll.epollSetMessageCallback(onMessage);
