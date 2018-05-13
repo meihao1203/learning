@@ -83,7 +83,21 @@ namespace meihao
 		for(int idx=0;idx!=ret;++idx)
 		{
 			if(_events[idx].data.fd ==_sfd &&_events[idx].events == EPOLLIN)
-			{}
+			{//处理新连接
+				handleConnection();
+			}
 		}
+	}
+	void Epoll::handleConnection()
+	{
+		int connfd = ::accept(_sfd,NULL,NULL);
+		addEpollfd(_efd,connfd);  
+		//处理新的TCP链接
+		TcpConnectionPtr con(new TcpConnection(connfd));
+		con->setConnectionCallback(_onConnectionCb);
+		con->setMessageCallback(_onMessageCb);
+		con->setCloseCallback(_onCloseCb);
+		_mapConnections.insert(::make_pair(connfd,con));
+		con->handleConnectionCallback();
 	}
 };

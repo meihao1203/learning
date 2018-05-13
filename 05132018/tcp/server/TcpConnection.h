@@ -34,7 +34,7 @@ namespace meihao
 			void setConnectionCallback(TcpConnectionCallback cb);
 			void setMessageCallback(TcpConnectionCallback cb);
 			void setCloseCallback(TcpConnectionCallback cb);
-		private:  
+
 			void handleConnectionCallback();  // 客户端连接上后做出的操作
 			void handleMessageCallback();  // 服务器端-客户端之间发送消息
 			void handleCloseCallback();  // 服务器端关闭连接做出的行为
