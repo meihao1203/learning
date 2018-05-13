@@ -43,23 +43,22 @@ void test0()
 	}
 #endif
 }
-void onConnection(const meihao::TcpConnectionPtr& connect)
-{
-	cout<<connect->toString()<<"has connected!"<<endl;
-	connect->send("I am server\n");
-}
-void onMessage(const meihao::TcpConnectionPtr& connect)
-{
-	string msg = connect->receive();
-	cout<<msg<<endl;
-	connect->send(msg);
-}
-void onClose(const meihao::TcpConnectionPtr& connect)
-{
-	cout<<connect->toString()<<"has closed"<<endl;
-}
-int main()
-{
+#if 0 // 测试TCPConnection类
+	void onConnection(const meihao::TcpConnectionPtr& connect)
+	{
+		cout<<connect->toString()<<"has connected!"<<endl;
+		connect->send("I am server\n");
+	}
+	void onMessage(const meihao::TcpConnectionPtr& connect)
+	{
+		string msg = connect->receive();
+		cout<<msg<<endl;
+		connect->send(msg);
+	}
+	void onClose(const meihao::TcpConnectionPtr& connect)
+	{
+		cout<<connect->toString()<<"has closed"<<endl;
+	}
 	meihao::InetAddress inet("192.168.254.136",8848);
 	meihao::Socket socket;
 	socket.ready(inet);
@@ -70,9 +69,12 @@ int main()
 	ptr->setConnectionCallback(onConnection);
 	ptr->setMessageCallback(onMessage);
 	ptr->setCloseCallback(onClose);
-	ptr->handleConnectionCallback();
-	ptr->handleMessageCallback();
-	ptr->handleCloseCallback();
+	//	ptr->handleConnectionCallback();
+	//	ptr->handleMessageCallback();
+	//	ptr->handleCloseCallback();
 	ptr->shutdown();
+#endif
+int main()
+{
 }
 
