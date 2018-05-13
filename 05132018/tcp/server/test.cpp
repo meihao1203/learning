@@ -61,7 +61,9 @@ void test0()
 		cout<<connect->toString()<<"has closed"<<endl;
 	}
 #endif 
-#if 0
+void test1()
+{
+#if 1
 	meihao::InetAddress inet("192.168.254.136",8848);
 	meihao::Socket socket;
 	socket.ready(inet);
@@ -77,6 +79,8 @@ void test0()
 	//	ptr->handleCloseCallback();
 	ptr->shutdown();
 #endif
+}
+
 int main()
 {
 	meihao::InetAddress inet("192.168.254.136",8848);
