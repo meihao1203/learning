@@ -35,9 +35,8 @@ void test0()
 	{
 	}
 #endif
-
 }
-int main()
+void test1()
 {
 	int sfd = socket(AF_INET,SOCK_STREAM,0);
 	meihao::InetAddress inetaddr("192.168.254.136",8848);  // 所以这个也能链接上
@@ -55,6 +54,24 @@ int main()
 	cout<<buf<<endl;
 	
 	::shutdown(sfd,SHUT_WR);
-
-	return 0;
 }
+
+int main()
+{
+	int sfd = socket(AF_INET,SOCK_STREAM,0);
+	meihao::InetAddress inetaddr("192.168.254.136",8848); 
+	int ret = connect(sfd,(const struct sockaddr*)inetaddr.getInetAddressPtr(),(socklen_t)sizeof(struct sockaddr));
+	cout<<ret<<endl;
+	meihao::SocketIO socketio(sfd);
+	char buf[512] = "";
+	socketio.readline(buf,sizeof(buf));
+	cout<<buf;
+	bzero(buf,sizeof(buf));
+	read(0,buf,sizeof(buf));
+	socketio.writen(buf,sizeof(buf));
+	bzero(buf,sizeof(buf));
+	socketio.readline(buf,sizeof(buf));
+	cout<<buf<<endl;
+	::shutdown(sfd,SHUT_WR);
+}
+

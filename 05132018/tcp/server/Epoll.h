@@ -21,7 +21,7 @@ namespace meihao
 			void loop();
 			void unloop();
 			void waitEpollfd();
-			void setConnectCallback(TcpConnectionCallback cb);
+			void setConnectionCallback(TcpConnectionCallback cb);
 			void setMessageCallback(TcpConnectionCallback cb);
 			void setCloseCallback(TcpConnectionCallback cb);
 		private:

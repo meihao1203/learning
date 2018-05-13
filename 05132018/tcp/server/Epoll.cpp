@@ -37,7 +37,7 @@ namespace meihao
 		{
 			handle_error("epoll_ctl");
 		}
-	}
+}
 	void delEpollfd(int efd,int fd)
 	{
 		struct epoll_event event;
@@ -95,9 +95,12 @@ namespace meihao
 	void Epoll::handleConnection()
 	{
 		int connfd = ::accept(_sfd,NULL,NULL);
+		cout<<"链接到的fd"<<connfd<<endl;
 		addEpollfd(_efd,connfd);  
 		//处理新的TCP链接
 		TcpConnectionPtr con(new TcpConnection(connfd));
+		cout<<"TcpConnectionPtr"<<con<<endl;
+		//设置TcpConnectionPtr的回调函数
 		con->setConnectionCallback(_onConnectionCb);
 		con->setMessageCallback(_onMessageCb);
 		con->setCloseCallback(_onCloseCb);
@@ -132,7 +135,7 @@ namespace meihao
 		}while(-1==ret&&errno==EINTR);
 		return ret>0;  //>0表示有数据可读,链接没有断开
 	}
-	void Epoll::setConnectCallback(TcpConnectionCallback cb)
+	void Epoll::setConnectionCallback(TcpConnectionCallback cb)
 	{
 		_onConnectionCb = cb;
 	}

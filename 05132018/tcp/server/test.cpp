@@ -5,6 +5,7 @@
 ///
 
 #include"InetAddress.h"
+#include"Epoll.h"
 #include"Socket.h"
 #include"SocketIO.h"
 #include"TcpConnection.h"
@@ -43,7 +44,7 @@ void test0()
 	}
 #endif
 }
-#if 0 // 测试TCPConnection类
+#if 1 // 测试TCPConnection类
 	void onConnection(const meihao::TcpConnectionPtr& connect)
 	{
 		cout<<connect->toString()<<"has connected!"<<endl;
@@ -59,6 +60,8 @@ void test0()
 	{
 		cout<<connect->toString()<<"has closed"<<endl;
 	}
+#endif 
+#if 0
 	meihao::InetAddress inet("192.168.254.136",8848);
 	meihao::Socket socket;
 	socket.ready(inet);
@@ -76,5 +79,13 @@ void test0()
 #endif
 int main()
 {
+	meihao::InetAddress inet("192.168.254.136",8848);
+	meihao::Socket socket;
+	socket.ready(inet);  // 开启服务器端口
+	meihao::Epoll epoll(socket.fd());
+	epoll.setConnectionCallback(onConnection);
+	epoll.setMessageCallback(onMessage);
+	epoll.setCloseCallback(onClose);
+	epoll.loop();
 }
 
