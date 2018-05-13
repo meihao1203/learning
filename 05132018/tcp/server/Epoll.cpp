@@ -117,8 +117,8 @@ namespace meihao
 			else
 			{//断开
 				delEpollfd(_efd,connfd);
-				it->second->handleCloseCallback();
-				_mapConnections.erase(it);
+				it->second->handleCloseCallback();  //打印显示断开信息
+				_mapConnections.erase(it);  //map中删除对应的pair
 			}
 		}
 	}
