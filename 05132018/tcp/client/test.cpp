@@ -61,7 +61,6 @@ int main()
 	int sfd = socket(AF_INET,SOCK_STREAM,0);
 	meihao::InetAddress inetaddr("192.168.254.136",8848); 
 	int ret = connect(sfd,(const struct sockaddr*)inetaddr.getInetAddressPtr(),(socklen_t)sizeof(struct sockaddr));
-	cout<<ret<<endl;
 	meihao::SocketIO socketio(sfd);
 	char buf[512] = "";
 	socketio.readline(buf,sizeof(buf));
