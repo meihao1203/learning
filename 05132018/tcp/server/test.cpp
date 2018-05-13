@@ -83,9 +83,9 @@ int main()
 	meihao::Socket socket;
 	socket.ready(inet);  // 开启服务器端口
 	meihao::Epoll epoll(socket.fd());
-	epoll.setConnectionCallback(onConnection);
-	epoll.setMessageCallback(onMessage);
-	epoll.setCloseCallback(onClose);
+	epoll.epollSetConnectionCallback(onConnection);
+	epoll.epollSetMessageCallback(onMessage);
+	epoll.epollSetCloseCallback(onClose);
 	epoll.loop();
 }
 

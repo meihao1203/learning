@@ -135,15 +135,15 @@ namespace meihao
 		}while(-1==ret&&errno==EINTR);
 		return ret>0;  //>0表示有数据可读,链接没有断开
 	}
-	void Epoll::setConnectionCallback(TcpConnectionCallback cb)
+	void Epoll::epollSetConnectionCallback(TcpConnectionCallback cb)
 	{
 		_onConnectionCb = cb;
 	}
-	void Epoll::setMessageCallback(TcpConnectionCallback cb)
+	void Epoll::epollSetMessageCallback(TcpConnectionCallback cb)
 	{
 		_onMessageCb = cb;
 	}
-	void Epoll::setCloseCallback(TcpConnectionCallback cb)
+	void Epoll::epollSetCloseCallback(TcpConnectionCallback cb)
 	{
 		_onCloseCb = cb;
 	}

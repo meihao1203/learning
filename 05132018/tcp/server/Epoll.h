@@ -21,9 +21,10 @@ namespace meihao
 			void loop();
 			void unloop();
 			void waitEpollfd();
-			void setConnectionCallback(TcpConnectionCallback cb);
-			void setMessageCallback(TcpConnectionCallback cb);
-			void setCloseCallback(TcpConnectionCallback cb);
+			//在epoll类中用函数设置TcpConnection类中的私有变量
+			void epollSetConnectionCallback(TcpConnectionCallback cb);
+			void epollSetMessageCallback(TcpConnectionCallback cb);
+			void epollSetCloseCallback(TcpConnectionCallback cb);
 		private:
 			void handleConnection();  //epoll处理新连接的客户端
 			void handleMessage(int connfd);  //处理消息
