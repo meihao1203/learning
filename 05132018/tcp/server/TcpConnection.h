@@ -24,29 +24,29 @@ namespace meihao
 		typedef function<void(const TcpConnectionPtr& conn)> TcpConnectionCallback;
 		//function函数对象绑定回调函数
 		public:
-		TcpConnection(int confd);  // 连接到的fd
-		~TcpConnection();
-		string receive();
-		void send(const string& msg);
-		void shutdown();
-		string toString();  // 输出服务器端信息和连接上的客户端的信息
-
-		void setConnectionCallback(TcpConnectionCallback cb);
-		void setMessageCallback(TcpConnectionCallback cb);
-		void setCloseCallback(TcpConnectionCallback cb);
-	//	private:
-		void handleConnectionCallback();  // 客户端连接上后做出的操作
-		void handleMessageCallback();  // 服务器端-客户端之间发送消息
-		void handleCloseCallback();  // 服务器端关闭连接做出的行为
+			TcpConnection(int confd);  // 连接到的fd
+			~TcpConnection();
+			string receive();
+			void send(const string& msg);
+			void shutdown();
+			string toString();  // 输出服务器端信息和连接上的客户端的信息
+	
+			void setConnectionCallback(TcpConnectionCallback cb);
+			void setMessageCallback(TcpConnectionCallback cb);
+			void setCloseCallback(TcpConnectionCallback cb);
+		private:  
+			void handleConnectionCallback();  // 客户端连接上后做出的操作
+			void handleMessageCallback();  // 服务器端-客户端之间发送消息
+			void handleCloseCallback();  // 服务器端关闭连接做出的行为
 		private:
-		Socket _sock;
-		SocketIO _sockIO;
-		InetAddress _localAddress;
-		InetAddress _peerAddress;
-		bool _isShutdownWrite;
-		TcpConnectionCallback _onConnectionCb;  // 请求连接到服务器做出的行为
-		TcpConnectionCallback _onMessageCb;  // 双方发送消息 
-		TcpConnectionCallback _onCloseCb;  // 关闭链接行为
+			Socket _sock;
+			SocketIO _sockIO;
+			InetAddress _localAddress;
+			InetAddress _peerAddress;
+			bool _isShutdownWrite;
+			TcpConnectionCallback _onConnectionCb;  // 请求连接到服务器做出的行为
+			TcpConnectionCallback _onMessageCb;  // 双方发送消息 
+			TcpConnectionCallback _onCloseCb;  // 关闭链接行为
 	};
 };
 #endif
