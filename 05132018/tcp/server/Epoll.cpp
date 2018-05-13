@@ -37,7 +37,7 @@ namespace meihao
 		{
 			handle_error("epoll_ctl");
 		}
-}
+	}
 	void delEpollfd(int efd,int fd)
 	{
 		struct epoll_event event;
@@ -50,9 +50,9 @@ namespace meihao
 		}
 	}
 	Epoll::Epoll(int sfd):_efd(createEpollfd())
-					     ,_sfd(sfd)
-						 ,_isLooping(false)
-						 ,_events(1024)  // 容器提前开辟空间
+						  ,_sfd(sfd)
+									,_isLooping(false)
+												  ,_events(1024)  // 容器提前开辟空间
 	{
 		addEpollfd(_efd,_sfd);
 	}
@@ -63,6 +63,11 @@ namespace meihao
 		{
 			waitEpollfd();
 		}
+	}
+	void Epoll::unloop() //关闭epoll监听
+	{
+		if(_isLooping)
+			_isLooping = false;
 	}
 	void Epoll::waitEpollfd()
 	{

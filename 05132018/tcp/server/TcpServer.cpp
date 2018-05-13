@@ -32,6 +32,21 @@ namespace meihao
 		_epoll.epollSetMessageCallback(_onMessageCb);
 		_epoll.epollSetCloseCallback(_onCloseCb);
 		_epoll.loop();  // epoll_wait客户端连接请求
-
+	}
+	void TcpServer::stop()
+	{
+		_epoll.unloop();
+	}
+	void TcpServer::tcpServerSetConnectionCallback(TcpConnectionCallback cb)
+	{
+		_onConnectionCb = cb;
+	}
+	void TcpServer::tcpServerSetMessageCallback(TcpConnectionCallback cb)
+	{
+		_onMessageCb = cb;
+	}
+	void TcpServer::tcpServerSetCloseback(TcpConnectionCallback cb)
+	{
+		_onCloseCb = cb;
 	}
 };
