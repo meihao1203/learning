@@ -27,7 +27,7 @@ namespace meihao
 		private:
 			void handleConnection();  //epoll处理新连接的客户端
 			void handleMessage(int connfd);  //处理消息
-			bool isConnected(int connfd);  //查看是否连接
+			bool isConnected(int connfd);  //查看描述符是否断开
 		private:
 			int _efd;  // epoll_create得到的fd
 			int _sfd;  // sockfd,用来监听客户端请求

@@ -106,10 +106,30 @@ namespace meihao
 	}
 	void Epoll::handleMessage(int connfd)
 	{
-		auto it = _mapConnections.::find(connfd);  //找到map中存放的对应描述符的关键字
+		auto it = _mapConnections.find(connfd);  //找到map中存放的对应描述符的关键字
 		if(it!=_mapConnections.end())  //如果描述符确实存在
 		{
-			
+			bool flag = isConnected(connfd);
+			if(flag)
+			{//链接没有断开
+				it->second->handleMessageCallback();  // tcp连接处理消息，调用的是TcpConnection类里的函数
+			}
+			else
+			{//断开
+				delEpollfd(_efd,connfd);
+				it->second->handleCloseCallback();
+				_mapConnections.erase(it);
+			}
 		}
+	}
+	bool Epoll::isConnected(int connfd)
+	{
+		int ret;
+		char buf[512];
+		do
+		{
+			ret = recv(connfd,buf,sizeof(buf),MSG_PEEK);  // 从内核缓冲区预读取
+		}while(-1==ret&&errno==EINTR);
+		return ret>0;  //>0表示有数据可读,链接没有断开
 	}
 };
