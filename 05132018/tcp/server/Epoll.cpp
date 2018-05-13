@@ -95,7 +95,6 @@ namespace meihao
 	void Epoll::handleConnection()
 	{
 		int connfd = ::accept(_sfd,NULL,NULL);
-		cout<<"链接到的fd"<<connfd<<endl;
 		addEpollfd(_efd,connfd);  
 		//处理新的TCP链接
 		TcpConnectionPtr con(new TcpConnection(connfd));
