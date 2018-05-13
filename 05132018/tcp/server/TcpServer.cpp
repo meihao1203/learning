@@ -36,6 +36,7 @@ namespace meihao
 	void TcpServer::stop()
 	{
 		_epoll.unloop();
+		_serverSock.shutdownWrite();
 	}
 	void TcpServer::tcpServerSetConnectionCallback(TcpConnectionCallback cb)
 	{
