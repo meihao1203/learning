@@ -25,9 +25,9 @@ namespace meihao
 			void setMessageCallback(TcpConnectionCallback cb);
 			void setCloseCallback(TcpConnectionCallback cb);
 		private:
-			void handleConnection();
-			void handleMessage(int connfd);
-			bool isConnected(int connfd);
+			void handleConnection();  //epoll处理新连接的客户端
+			void handleMessage(int connfd);  //处理消息
+			bool isConnected(int connfd);  //查看是否连接
 		private:
 			int _efd;  // epoll_create得到的fd
 			int _sfd;  // sockfd,用来监听客户端请求

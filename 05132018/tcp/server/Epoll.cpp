@@ -86,6 +86,10 @@ namespace meihao
 			{//处理新连接
 				handleConnection();
 			}
+			else if(_events[idx].events == EPOLLIN)  
+			{//处理已经连接上的客户端的输入请求
+				handleMessage(_events[idx].data.fd);
+			}
 		}
 	}
 	void Epoll::handleConnection()
@@ -97,7 +101,15 @@ namespace meihao
 		con->setConnectionCallback(_onConnectionCb);
 		con->setMessageCallback(_onMessageCb);
 		con->setCloseCallback(_onCloseCb);
-		_mapConnections.insert(::make_pair(connfd,con));
+		_mapConnections.insert(::make_pair(connfd,con));  // map中插入新连接的请求
 		con->handleConnectionCallback();
+	}
+	void Epoll::handleMessage(int connfd)
+	{
+		auto it = _mapConnections.::find(connfd);  //找到map中存放的对应描述符的关键字
+		if(it!=_mapConnections.end())  //如果描述符确实存在
+		{
+			
+		}
 	}
 };
