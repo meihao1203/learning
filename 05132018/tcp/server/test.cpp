@@ -74,9 +74,9 @@ void test1()
 	ptr->setConnectionCallback(onConnection);
 	ptr->setMessageCallback(onMessage);
 	ptr->setCloseCallback(onClose);
-	//	ptr->handleConnectionCallback();
-	//	ptr->handleMessageCallback();
-	//	ptr->handleCloseCallback();
+	ptr->handleConnectionCallback();
+	ptr->handleMessageCallback();
+	ptr->handleCloseCallback();
 	ptr->shutdown();
 #endif
 }

@@ -14,4 +14,24 @@ namespace meihao
 										    ,_epoll(_serverSock.fd())
 	{
 	}
+	TcpServer::TcpServer(const string& ip,unsigned short port):_addr(ip,port)
+															,_serverSock()
+															,_epoll(_serverSock.fd())
+	{
+	}
+	TcpServer::TcpServer(const InetAddress& addr):_addr(addr)
+												,_serverSock()
+											    ,_epoll(_serverSock.fd())
+	{
+	}
+	void TcpServer::start()
+	{
+		_serverSock.ready(_addr);  // 开启服务器，并监听
+		//epoll类设置请求的tcp连接的回调函数
+		_epoll.epollSetConnectionCallback(_onConnectionCb); 
+		_epoll.epollSetMessageCallback(_onMessageCb);
+		_epoll.epollSetCloseCallback(_onCloseCb);
+		_epoll.loop();  // epoll_wait客户端连接请求
+
+	}
 };

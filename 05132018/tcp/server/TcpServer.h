@@ -10,6 +10,7 @@
 #include"InetAddress.h"
 #include"Socket.h"
 #include"Epoll.h"
+#include"TcpConnection.h"
 using namespace std;
 namespace meihao
 {
@@ -18,7 +19,7 @@ namespace meihao
 		public:
 			TcpServer(unsigned short port);
 			TcpServer(const string& ip,unsigned short port);
-			TcpServer(const InetAddress addr);
+			TcpServer(const InetAddress& addr);
 			void start();
 			void stop();
 			void tcpServerSetConnectionCallback(TcpConnectionCallback cb);
