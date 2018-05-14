@@ -11,11 +11,12 @@ using namespace std;
 void onConnection(const meihao::TcpConnectionPtr& conn)
 {
 	cout<<conn->toString()<<"has connected!"<<endl;
+	conn->send("connect success!\n");
 }
 void onMessage(const meihao::TcpConnectionPtr& conn)
 {
 	string msg = conn->receive();
-	cout<<"recv:"<<msg<<endl;
+	cout<<"recv:"<<msg;
 	conn->send(msg);
 }
 void onClosed(const meihao::TcpConnectionPtr& conn)
