@@ -38,4 +38,5 @@ int main()
 		socketIO.readline(buf,sizeof(buf));
 		cout<<"recv from server:"<<buf;
 	}
+	return 0;
 }
