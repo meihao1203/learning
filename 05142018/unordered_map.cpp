@@ -25,12 +25,14 @@ int main()
 		cout<<it->first<<" "<<it->second<<endl;
 	}
 	//无序map,不能使用less<>和greater<>来排序了
+	
 	cout<<"test unordered_multimap:"<<endl;
 	unordered_multimap<int ,string> test2(arr,arr+5);
 	for(auto& elem:test2)
 	{
 		cout<<elem.first<<" "<<elem.second<<endl;
 	}
+
 	cout<<"test random access:"<<endl;
 	cout<<test1[1]<<endl;  // unordered_multimap不支持随机访问
 	unordered_multimap<int,string>::iterator umit = test2.find(2);
