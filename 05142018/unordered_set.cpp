@@ -14,11 +14,13 @@ int main()
 	for(auto& elem:test1)
 		cout<<elem<<" ";
 	cout<<endl;
+
 	cout<<"test unordered_multiset"<<endl;
 	unordered_multiset<int> test2(arr,arr+7);
 	for(auto& elem:test2)
 		cout<<elem<<" ";
 	cout<<endl;
+
 	unordered_multiset<int> test3(arr,arr+7);
 	cout<<"test random access"<<endl;
 	cout<<*(test2.find(3))<<endl;
