@@ -30,4 +30,5 @@ int main()
 	tcpServer.tcpServerSetMessageCallback(onMessage);
 	tcpServer.tcpServerSetCloseCallback(onClosed);
 	tcpServer.start();
+	tcpServer.stop();
 }

@@ -67,7 +67,9 @@ namespace meihao
 	void Epoll::unloop() //关闭epoll监听
 	{
 		if(_isLooping)
+		{
 			_isLooping = false;
+		}
 	}
 	void Epoll::waitEpollfd()
 	{
@@ -103,12 +105,11 @@ namespace meihao
 		addEpollfd(_efd,connfd);  
 		//处理新的TCP链接
 		TcpConnectionPtr con(new TcpConnection(connfd));
-		cout<<"TcpConnectionPtr"<<con<<endl;
 		//设置TcpConnectionPtr的回调函数
 		con->setConnectionCallback(_onConnectionCb);
 		con->setMessageCallback(_onMessageCb);
 		con->setCloseCallback(_onCloseCb);
-		_mapConnections.insert(::make_pair(connfd,con));  // map中插入新连接的请求
+		_mapConnections.insert(::make_pair(connfd,con));  //map中插入新连接的请求
 		con->handleConnectionCallback();
 	}
 	void Epoll::handleMessage(int connfd)
@@ -119,7 +120,7 @@ namespace meihao
 			bool flag = isConnected(connfd);
 			if(flag)
 			{//链接没有断开
-				it->second->handleMessageCallback();  // tcp连接处理消息，调用的是TcpConnection类里的函数
+				it->second->handleMessageCallback();  //tcp连接处理消息，调用的是TcpConnection类里的函数
 			}
 			else
 			{//断开
@@ -135,7 +136,7 @@ namespace meihao
 		char buf[512];
 		do
 		{
-			ret = recv(connfd,buf,sizeof(buf),MSG_PEEK);  // 从内核缓冲区预读取
+			ret = recv(connfd,buf,sizeof(buf),MSG_PEEK);  //从内核缓冲区预读取
 		}while(-1==ret&&errno==EINTR);
 		return ret>0;  //>0表示有数据可读,链接没有断开
 	}

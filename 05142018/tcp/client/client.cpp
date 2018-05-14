@@ -29,6 +29,7 @@ int main()
 	char buf[1024] = "";
 	socketIO.readline(buf,sizeof(buf));
 	cout<<buf;
+#if 0
 	while(1)
 	{
 		bzero(buf,sizeof(buf));
@@ -38,5 +39,11 @@ int main()
 		socketIO.readline(buf,sizeof(buf));
 		cout<<"recv from server:"<<buf;
 	}
-
+#endif
+		bzero(buf,sizeof(buf));
+		read(0,buf,sizeof(buf));
+		socketIO.writen(buf,sizeof(buf));
+		bzero(buf,sizeof(buf));
+		socketIO.readline(buf,sizeof(buf));
+		cout<<"recv from server:"<<buf;
 }
