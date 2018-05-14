@@ -24,7 +24,7 @@ namespace meihao
 			void stop();
 			void tcpServerSetConnectionCallback(TcpConnectionCallback cb);
 			void tcpServerSetMessageCallback(TcpConnectionCallback cb);
-			void tcpServerSetCloseback(TcpConnectionCallback cb);
+			void tcpServerSetCloseCallback(TcpConnectionCallback cb);
 		private:
 			InetAddress _addr;
 			Socket _serverSock;
