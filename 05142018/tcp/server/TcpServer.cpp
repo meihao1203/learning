@@ -46,7 +46,7 @@ namespace meihao
 	{
 		_onMessageCb = cb;
 	}
-	void TcpServer::tcpServerSetCloseback(TcpConnectionCallback cb)
+	void TcpServer::tcpServerSetCloseCallback(TcpConnectionCallback cb)
 	{
 		_onCloseCb = cb;
 	}
