@@ -1,0 +1,30 @@
+TCP网络编程封装
+一共分为6个类：
+	InetAddress类，TCP编程要绑定IP地址和PORT端口，这个类用来封装编程中要用到的网络地址
+	Socket类，套接字编程，包括获取套接字，绑定，监听，accept，断开连接，返回连接客户端和服务器端的网络地址
+	SocketIO类，用来对描述符的输入输出操作进行封装，包括读n个字符和写n个字符，读一行（涉及到从内核缓冲区预读取）
+	TcpConnection类，对连接来的客户端操作进行封装，包括刚连接上的行为，相互发送消息的行为和链接断开后的行为；
+		有三个回调函数变量来保存上面三个操作对应的函数对象。类中要设置专门的接口来设置这三个变量
+		类中的回调函数传形参都是传的对象变量本身的地址，为了正确管理指针资源，使用shared_ptr来托管，
+		传参的时候传本身，使用shared_from_this()方法。handle的三个方法里传参用到了shared_from_this()
+	Epoll类，封装多路复用类。有三个handle方法，handleConnection方法是新的连接客户端连上的行为，
+		这个行为目的是为新的连接设置TcpConnection里的三个回调函数，并执行连接行为
+		hanleMessage是有客户端发送数据后做出的行为，首先确定连接是否断开，然后发送消息或者断开，并从监听事件中删除
+	TcpServer类，终极封装，构造函数初始化网络地址，socket和epoll模型；start方法开始服务器，先开启Socket的ready，开始监听
+		然后epoll对象设置链接的回调函数，最后loop等待处理链接。
+
+使用：
+	定义一个TcpServer类对象，并指定网络地址；
+	对象设置三个回调函数
+	start开启
+tips:
+	三个回调函数，TcpServer类里面赋给三个回调函数的私有变量，
+	start开始的时候私有变量_epoll设置Epoll对象的三个回调函数私有变量，
+	_epoll对象在epoll_wait的时候，如果有新的链接
+		先把新连接描述符加到epoll_wait的监听事件里。
+		再用智能指针托管新的链接对象
+		其次设置三个回调函数（这时候回调函数传到了TcpConnection）
+		最后把描述符和TcpConnectionPtr存放到map数据结构
+	上面三个操作都在handleConnection方法里完成
+
+
