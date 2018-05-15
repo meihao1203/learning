@@ -48,12 +48,12 @@ namespace meihao
 		//设置、开启计时器
 		setTimerfd(_fd,_initialSec,_intervalSec);
 		struct pollfd fds;
-		fds.fd = _fd;  // 要监听的描述符
-		fds.events = POLLIN;  // 要监听的事件，可读
+		fds.fd = _fd;  //要监听的描述符
+		fds.events = POLLIN;  //要监听的事件，可读
 		_isStarted = true;
 		time_t t;
 		time(&t);
-		cout<<"计时器开启：\n"<<ctime(&t)<<endl;  // 打印当前系统时间，自带换行
+		cout<<"计时器开启：\n"<<ctime(&t)<<endl;  //打印当前系统时间，自带换行
 		while(_isStarted)
 		{
 			int ret = poll(&fds,1,5000);  //5s后时间没发生就返回

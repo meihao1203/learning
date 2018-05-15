@@ -24,7 +24,7 @@ namespace meihao
 			int _fd;  // 用来接收timerfd
 			bool _isStarted;
 			TimerCallback _cb;  // timerfd触发后执行什么函数
-			int _initialSec;  // 初始时间
+			int _initialSec;   // 初始时间
 			int _intervalSec;  // 间隔时间
 	};
 };
