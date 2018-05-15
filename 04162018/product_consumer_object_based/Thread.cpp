@@ -32,6 +32,8 @@ namespace meihao
 		if(NULL!=pthread)
 		{
 			pthread->_cb();
+			// _cb();  //静态函数，没有this指针，必须传参数进来调用
+			// 静态函数里面不能直接使用非静态函数
 		}
 	}
 };
