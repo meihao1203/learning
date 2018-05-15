@@ -45,7 +45,7 @@ namespace meihao
 			_isExit = true;
 			for(auto& elem:_threadsVec)
 			{
-				elem->join();  // 回收所有线程资源
+				elem->join();   // 回收所有线程资源
 				delete elem;
 			}
 		}
