@@ -39,17 +39,6 @@ class test
 	private:
 		RALL<resource> _p;
 };
-int main()
-{
-	test em;
-	cout<<"--------------------------"<<endl;
-	test em2;
-	cout<<"**************************"<<endl;
-	//em2 = em;  // 这里赋值了会导致em2和em释放，段错误
-	//后面我在RALL类里面的析构函数做了特殊处理，指针为NULL才delete
-	cout<<"准备开始释放资源:"<<endl;
-	return 0;
-}
 //resource::resouce()
 //托管资源
 //test::test()
