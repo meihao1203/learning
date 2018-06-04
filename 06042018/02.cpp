@@ -11,7 +11,6 @@ typedef struct Node
 int deleteListNode(List* head,node* deleteNode);
 void printList(List head);
 void test(List* head,node* deleteNode);
-#if 0
 int main()
 {
 #if 1
@@ -52,7 +51,6 @@ int main()
 	printList(head2);
 	system("pause");
 }
-#endif
 void printList(List head)
 {
 	if(NULL==head)
