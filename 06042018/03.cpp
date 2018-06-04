@@ -7,7 +7,6 @@ int partitionArrOddEven(int* arr,int length);
 int partitionArr(int* arr,int length);
 bool judge(int pos);  //判断是不是奇数
 void test(int* arr,int length);
-#if 0
 int main()
 {
 	int arr[] = {1,5,3,4,2};
@@ -18,7 +17,6 @@ int main()
 	test(NULL,2);  //待会看传值的时候是不是NULL
 	system("pause");
 }
-#endif
 int partitionArrOddEven(int* arr,int length)
 {
 	if(NULL==arr||length<=0)
