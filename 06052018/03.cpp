@@ -2,7 +2,6 @@
 //思路：注意边界条件和结束条件
 //每次都是矩阵的对角开始打印，(0,0)-(1,1)-(2,2)
 //设置遍历起始条件，和终止条件
-#if 0
 int printMatrix(int **arr,int rows,int columns);   //动态定义的二维数组才能这样传值
 //int printMatrix(int (*arr)[4],int rows,int columns);  //普通数组这样传值
 void test(int **arr,int rows,int columns);
@@ -151,4 +150,3 @@ int printTwoMatrix(int **arr,int rows,int columns)
 	}
 	return 0;
 }
-#endif
