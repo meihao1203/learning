@@ -1,6 +1,5 @@
 //题目17：输入两个递增排序的链表，合并这两个链表并使新链表中的结点仍然是按照递增排序的
 //思路：两个链表，分别从头开始比较，选择小的一个作为合并链表的新结点。由于每次都是这样的操作，可以用递归
-#if 0
 #include<iostream>
 using namespace std;
 typedef struct node
@@ -94,4 +93,3 @@ void print(pList head)
 	cout<<endl;
 	return ;
 }
-#endif
