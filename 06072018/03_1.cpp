@@ -70,3 +70,25 @@ void Combination(char* str,int length)
 		combination(str,idx,res);
 	}
 }
+//origin str=abc
+//a
+//b
+//c
+//ab
+//ac
+//bc
+//abc
+//
+//origin str=ab
+//a
+//b
+//ab
+//
+//origin str is NULL
+//
+//origin str=
+//
+//
+//origin str=a
+//a
+//
