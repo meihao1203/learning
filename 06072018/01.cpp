@@ -3,7 +3,6 @@
 //思路：借助一个辅助数组，模拟压栈序列和弹栈序列
 //把算法使用两个整数数组存放序列，如果第一个序列的数字和第二个序列数组相同贼弹栈
 //算法最后判断辅助栈是不是空，以及弹栈序列是不是遍历完
-#if 0
 #include<iostream>
 #include<stack>
 using namespace std;
@@ -67,7 +66,6 @@ bool isPopOrder(int* pushOrder,int* popOrder,int length)
 	}
 	return flag;
 }
-#endif
 //1
 //
 //0
