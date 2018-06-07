@@ -5,6 +5,7 @@
 //eg:a -> (b,c)中取长度0的组合；(b,c)中取长度1的组合
 //递归出口：长度=0或者字符串到达末尾。
 #include<iostream>
+#include<string.h>
 #include<string>
 using namespace std;
 void Combination(char* str,int length);
@@ -32,7 +33,7 @@ int main()
 	test(str5,2);
 	cout<<endl;
 
-	system("pause");
+	//system("pause");
 }
 void test(char* str,int length)
 {
