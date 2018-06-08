@@ -68,7 +68,7 @@ bool judgeMoreThenHalf(int* arr,int length,int number)
 		if(arr[idx]==number)
 			times++;
 	}
-	if(times>=length>>1)
+	if(times>=length>>1)  // ÓÒÒÆ´úÌæ³ı·¨
 		return true;
 	return false;
 }
