@@ -90,3 +90,11 @@ int divide(int* arr,int left,int right)
 	}
 	return dLeft;
 }
+//0
+//
+//1
+//
+//-1
+//
+//2
+//
