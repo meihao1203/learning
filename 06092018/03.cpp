@@ -5,7 +5,6 @@
 //如果相加大于0，下一步在去和当前最大值比较，如果大于最大值则更新最大值。小于则继续加下一个数组元素。
 //如果相加后小于0，证明前面的连续子数组不可能是最大值，重新修改sum为下一个元素的值，继续遍历相加。
 //最终最大值记录的就是子数组的和的最大值。
-#if 0
 #include<iostream>
 using namespace std;
 int findMaxSubarray(int* arr,int length);
@@ -16,7 +15,6 @@ int main()
 	test(arr,8);
 	cout<<endl;
 
-	system("pause");
 }
 void test(int* arr,int length)
 {
@@ -41,4 +39,5 @@ int findMaxSubarray(int* arr,int length)
 	}
 	return totalSum;
 }
-#endif
+//18
+//
