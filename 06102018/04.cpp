@@ -1,6 +1,6 @@
-//��Ŀ37�����������������ҳ����ǵĵ�һ�������ڵ㡣
-//˼·�������������й���������ζ����һЩ�ڵ��غϡ����ȱ���������������ĳ��ȣ���������
-//���߶�����Ĳ�����֮����������ͬʱ��ʼ������֪��������ͬ�Ľڵ㡣
+//题目37：输入两个链表，找出它们的第一个公共节点。
+//思路：两个单链表有公共结点就意味着有一些结点重合。首先遍历求出两个链表的长度，长的链表
+//先走多出来的步数，之后两个链表同时开始遍历，直到遇到第一个相同的节点。
 #include<iostream>
 using namespace std;
 typedef struct node
@@ -17,13 +17,13 @@ void test1();
 void test2();
 int main()
 {
-	test0();  //�����������ͬ�ڵ�4
+	test0();  //正常情况，相同节点4
 	cout<<endl;
 
-	test1();  //û�й����ڵ�
+	test1();  //没有公共节点
 	cout<<endl;
 
-	test2();  //��ָ��
+	test2();  //空指针
 	system("pause");
 }
 void test(pList first,pList second)
