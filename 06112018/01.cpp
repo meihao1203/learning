@@ -1,7 +1,6 @@
 //题目38：数字在排序数组中出现的次数，统计一个数字在排序数组中出现的次数。
 //例如输入排序数组{1,2,3,3,3,3,4,5}和数字3，由于3在这个数组中出现了4次，因此输出4。
 //思路：由于数组是排序的，可以使用二分查找，先找第一个k出现的位置，然后再找第二个k出现的位置。
-#if 0
 #include<iostream>
 using namespace std;
 int getFirstK(int* arr,int start,int end,int elem);
@@ -122,7 +121,6 @@ int getLastK(int* arr,int start,int end,int elem)
 	}
 	return getLastK(arr,tmpStart,tmpEnd,elem);
 }
-#endif
 //1 2 3 3 3 3 4 5
 //3 appear 4 times.
 //1 2 3 3 3 3 4 5
