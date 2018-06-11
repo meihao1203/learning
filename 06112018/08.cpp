@@ -20,7 +20,6 @@ int main()
 
 	test(3);
 	cout<<endl;
-	system("pause");
 }
 void test(int cnt)
 {
