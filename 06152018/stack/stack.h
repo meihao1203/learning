@@ -19,7 +19,7 @@ class Stack
                 bool pop(T &);
                 int getPos()
                 {
-                        return _top;
+                    return _top;
                 }
 };
 
