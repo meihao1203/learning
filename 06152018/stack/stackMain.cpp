@@ -4,7 +4,6 @@ int test0(void)
         Stack<int, 10> stackInt;
         cout << "开始时stakcInt是否为空?" << stackInt.empty() << endl;
         stackInt.push(5);
-
         cout << "此始时stakcInt是否为空?" << stackInt.empty() << endl;
 
         for(int idx = 1; idx !=10; ++idx)
