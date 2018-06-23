@@ -9,8 +9,8 @@ typedef struct BinaryTree
 }binaryTreeNode,*pBinaryTree;
 
 int createBinaryTree(pBinaryTree& root);
-void levelOrder(pBinaryTree& root);
-void inorderTraversal(pBinaryTree& root);
+void levelOrder(const pBinaryTree& root);
+void inorderTraversal(const pBinaryTree& root);
 
 int main()
 {
@@ -36,7 +36,7 @@ int createBinaryTree(pBinaryTree& root)
 	}
 	return 0;
 }
-//void levelOrder(pBinaryTree& root)   //用数据结构队列queue实现
+//void levelOrder(const pBinaryTree& root)   //用数据结构队列queue实现
 //{
 //	if(NULL==root)
 //		return ;
@@ -59,7 +59,7 @@ typedef struct List
 	binaryTreeNode* btNodeAddr;
 	struct List* next;
 }btListNode,*btList;
-void levelOrder(pBinaryTree& root)  //用链表来时先，数组不知道预先开辟多少空间
+void levelOrder(const pBinaryTree& root)  //用链表来时先，数组不知道预先开辟多少空间
 {
 	if(NULL==root)
 		return ;
