@@ -19,7 +19,6 @@ int main()
 	levelOrder(root);
 	cout<<endl;
 }
-
 int createBinaryTree(pBinaryTree& root)
 {
 	char data;
