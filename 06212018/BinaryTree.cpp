@@ -11,9 +11,9 @@ typedef struct BinaryTreeNode  //二叉树结点数据结构
 //创建一个二叉树
 int createBinaryTree(pBTNode& root);
 //二叉树的三种遍历
-void preorderTraversal(pBTNode& root);  //前序遍历,根左右
-void inorderTraversal(pBTNode& root);  //中序遍历，左根右
-void postorderTraversal(pBTNode& root);  //后序遍历，左右根
+void preorderTraversal(const pBTNode& root);  //前序遍历,根左右
+void inorderTraversal(const pBTNode& root);  //中序遍历，左根右
+void postorderTraversal(const pBTNode& root);  //后序遍历，左右根
 int main()
 {
 	do{
@@ -49,7 +49,7 @@ int createBinaryTree(pBTNode& root)
 	}
 	return 0;
 }
-void preorderTraversal(pBTNode& root)
+void preorderTraversal(const pBTNode& root)
 {
 	if(NULL==root)
 		return ; 
@@ -57,7 +57,7 @@ void preorderTraversal(pBTNode& root)
 	preorderTraversal(root->lchild);  //前序遍历左子树
 	preorderTraversal(root->rchild);  //前序遍历右子树
 }
-void inorderTraversal(pBTNode& root)
+void inorderTraversal(const pBTNode& root)
 {
 	if(NULL==root)
 		return ;
@@ -65,7 +65,7 @@ void inorderTraversal(pBTNode& root)
 	cout<<root->data<<" ";  //中序遍历输出根结点数据
 	inorderTraversal(root->rchild);  //中序遍历右子树
 }
-void postorderTraversal(pBTNode& root)
+void postorderTraversal(const pBTNode& root)
 {
 	if(NULL==root)
 		return ;
