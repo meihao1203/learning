@@ -1,4 +1,3 @@
-#if 0
 #include<iostream>
 using namespace std;
 int main()
@@ -18,9 +17,7 @@ int main()
 	cout<<c<<endl;
 	signed short int d = 0xFF;
 	cout<<d<<endl;
-	system("pause");
 }
-#endif 
 //4294967295
 //2147483647
 //-1
@@ -28,4 +25,3 @@ int main()
 //127
 //128
 //255
-//请按任意键继续. . .
