@@ -4,10 +4,10 @@
 #include<algorithm>
 namespace meihao
 {
-	bool cmp(const edges& a,const edges& b)
-	{
-		return a.weight < b.weight;  //从小到大排序
-	}
+//	bool cmp(const edges& a,const edges& b)
+//	{
+//		return a.weight < b.weight;  //从小到大排序
+//	}
 	void readEgdesFromGraph(const meihao::Graph& g,vector<edges>& edgeArr)
 	{//无向图邻接矩阵都是对称的，只读取上三角即可
 		int vertexCnt = g.getGraphVertexNumber();
@@ -25,7 +25,7 @@ namespace meihao
 				}
 			}
 		}
-		sort(edgeArr.begin(),edgeArr.end(),cmp);  //从小到大排序
+		sort(edgeArr.begin(),edgeArr.end(),[](const edges& a,const edges& b){ return a.weight < b.weight; });  //从小到大排序
 	}
 	void MiniSpanTree_Kruskal(const meihao::Graph& g)
 	{
