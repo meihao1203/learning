@@ -87,7 +87,7 @@ namespace meihao
 	}
 	weight_vaule_type Graph::getGraphEdgeWeight(int vi,int vj)const
 	{
-		if(vi<0||vj<0||vi>=_vertexNum||vi>=_vertexNum)
+		if(vi<0||vj<0||vi>=_vertexNum||vj>=_vertexNum)
 		{
 			graph_error = true;
 			return -1;   //因为图的权值可以是负数，为了区分，就拿一个bool变量来标记什么情况下-1表示出错了
@@ -100,7 +100,7 @@ namespace meihao
 	}
 	int Graph::setGraphEdgeWeight(int vi,int vj,weight_vaule_type weight)
 	{
-		if(vi<0||vj<0||vi>=_vertexNum||vi>=_vertexNum||weight>max_weight_value)
+		if(vi<0||vj<0||vi>=_vertexNum||vj>=_vertexNum||weight>max_weight_value)
 		{
 			graph_error = true;
 			return -1;   
