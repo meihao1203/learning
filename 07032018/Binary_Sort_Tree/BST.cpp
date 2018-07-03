@@ -9,11 +9,11 @@ bstNode* BST_Search(pBstNode root,int key)  //二叉排序树中查找关键字key
 	}
 	else if(key>root->data)  //大于根结点，右子树中继续查找
 	{
-		BST_Search(root->rchild,key);  
+		return BST_Search(root->rchild,key);  
 	}
 	else if(key<root->data)  //小于根结点，做左子树中继续查找
 	{
-		BST_Search(root->lchild,key);
+		return BST_Search(root->lchild,key);
 	}
 }  
 
@@ -95,7 +95,9 @@ int deleteNode(bstNode*& node)
 		if(nullptr==delNode->rchild)
 		{
 			node->data = delNode->data;
-			parent->lchild = delNode->lchild;
+			node->lchild = delNode->lchild;
+			delete delNode;
+			delNode = nullptr;
 			return 0;
 		}
 		//有右子树，前驱是右子树的最右结点
@@ -108,6 +110,8 @@ int deleteNode(bstNode*& node)
 		node->data = delNode->data;
 		//判断前驱是不是要用其他结点替换
 		parent->rchild = delNode->lchild;
+		delete delNode;
+		delNode = nullptr;
 		return 0;
 	}
 	return 0;
