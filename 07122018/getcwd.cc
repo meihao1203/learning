@@ -11,6 +11,6 @@ int main()
 {
 	char* path = getcwd(NULL,0);
 	printf("%s\n",path);
-	free(path);
+	free(path);  //必须释放才不会内存泄露
 	path = NULL;
 }
