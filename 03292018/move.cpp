@@ -91,6 +91,7 @@ int main()
 	cout<<s3<<endl;
 	s2 = move(s1);  // 显示的将左值转换成右值
 	cout<<"s2="<<s2<<endl;
+	cout<<"-------"<<endl;
 	//cout<<"s1="<<s1<<endl;  // 当使用std::move函数将某个对象s1转成右值后,
 	// s1不能再使用
 	cout<<cin.good()<<endl;
