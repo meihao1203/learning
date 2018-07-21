@@ -42,8 +42,8 @@ private:
 };
 int main()
 {
-	cout<<sizeof(Derived)<<endl;
-	system("pause");
+	cout<<sizeof(Derived)<<endl;  //64
+	//system("pause");
 	return 0;
 }
 /*
