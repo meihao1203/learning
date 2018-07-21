@@ -39,7 +39,8 @@ int main()
 	//A* a = new A(1);  //错误, Example的构造函数是private类型, 不能new
 	A* a = A::createObject(1);
 	a->disp();
-	A::deleteObject(a);
+	//A::deleteObject(a);
+	delete a;
 	return 0;
 }
 //x = 1
