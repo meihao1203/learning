@@ -38,7 +38,7 @@ namespace meihao
 			btmp += tmp;
 			nleft -= tmp;
 		}
-		return  count-nleft;  // 一共真正赌了多少个字符
+		return  count-nleft;  // 一共真正读了多少个字符
 	}
 	size_t SocketIO::writen(const char* buf,size_t count)
 	{
