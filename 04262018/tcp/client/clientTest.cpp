@@ -16,7 +16,7 @@ int main()
 {
 	int sfd = socket(AF_INET,SOCK_STREAM,0);
 	//下面两个都能连接到服务器端，127.0.0.1是本地环回测试地址
-	//127.0.0.1~127.255.255.254时间的任意地址
+	//127.0.0.1~127.255.255.254之间的任意地址
 	//meihao::InetAddress inetaddr(8888);  // 使用这个ip=127.0.0.1
 	//meihao::InetAddress inetaddr("192.168.254.136",8888);
 	meihao::InetAddress inetaddr("127.1.1.1",8888);  // 所以这个也能链接上

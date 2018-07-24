@@ -127,7 +127,7 @@ namespace meihao
 	{
 		struct sockaddr_in addr;
 		memset(&addr,0,sizeof(addr));
-		socklen_t len;
+		socklen_t len = sizeof(addr);
 		if(::getpeername(fd,
 					    (struct sockaddr*)&addr,
 						&len)
@@ -136,5 +136,6 @@ namespace meihao
 			perror("getpPeerAddress");
 			_exit(-1);
 		}
+		return InetAddress(addr);
 	}
 };

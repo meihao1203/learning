@@ -21,7 +21,7 @@ namespace meihao
 		_addr.sin_port = port;
 		_addr.sin_addr.s_addr = INADDR_ANY;  // 使用本机IP地址
 	}
-	InetAddress::InetAddress(const string& ip,unsigned short port)
+	InetAddress::InetAddress(const string& ip,const unsigned short& port)
 	{
 		memset(&_addr,0,sizeof(_addr));
 		_addr.sin_family = AF_INET;
@@ -39,5 +39,9 @@ namespace meihao
 	string InetAddress::ip()
 	{
 		return inet_ntoa(_addr.sin_addr);
+	}
+	unsigned short InetAddress::port()
+	{
+		return _addr.sin_port;
 	}
 };

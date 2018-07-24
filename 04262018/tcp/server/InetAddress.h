@@ -16,7 +16,7 @@ namespace meihao
 	{
 		public:
 			InetAddress(unsigned short);
-			InetAddress(const string&,unsigned short);
+			InetAddress(const string&,const unsigned short&);
 			InetAddress(struct sockaddr_in);
 			const struct sockaddr_in* getInetAddressPtr()const;
 			string ip();

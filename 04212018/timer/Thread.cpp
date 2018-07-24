@@ -36,6 +36,6 @@ namespace meihao
 	}
 	Thread::~Thread()
 	{
-
+		pthread_join(_pthId,NULL);
 	}
 };

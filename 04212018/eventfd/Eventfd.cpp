@@ -26,7 +26,6 @@ namespace meihao
 								,_isStarted(false)
 								,_fd(getEventfd())
 	{
-
 	}
 	void Eventfd::handleRead()
 	{
