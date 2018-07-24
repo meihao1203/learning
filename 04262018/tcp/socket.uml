@@ -25,7 +25,7 @@
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">756</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">120</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">285</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">306</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">158</XPD:ATTR>
 <XPD:REF name="Model">nFISbO9Xt0C5NO75CYT7pAAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="D4GIsweNEUiprwLf8v+3ywAA">
@@ -135,12 +135,12 @@
 <XPD:ATTR name="Name" type="string">InetAddress</XPD:ATTR>
 <XPD:REF name="Owner">nFISbO9Xt0C5NO75CYT7pAAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="B7jEUmotSEWG1+GYXTvpCAAA">
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="OIA7fGOGIkOUXF6eGwv//wAA">
 <XPD:ATTR name="Name" type="string">const string&amp;</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">SCH52CKHyEm7ulB9sohDuAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="ku07KEMiUUumGq7Y5l+YgwAA">
-<XPD:ATTR name="Name" type="string">unsigned short</XPD:ATTR>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="pc641hjd0UmUuoax8haGkwAA">
+<XPD:ATTR name="Name" type="string">const unsigned short&amp;</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">SCH52CKHyEm7ulB9sohDuAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
