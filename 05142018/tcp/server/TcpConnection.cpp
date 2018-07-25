@@ -61,7 +61,7 @@ namespace meihao
 	}
 
 	// 开始初始化类里面的回调函数的值
-	void TcpConnection::setConnectionCallback(TcpConnectionCallback cb)
+void TcpConnection::setConnectionCallback(TcpConnectionCallback cb)
 	{
 		_onConnectionCb = cb;
 	}
