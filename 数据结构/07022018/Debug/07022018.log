@@ -1,0 +1,6 @@
+﻿  testBST.cpp
+  BST.cpp
+  正在生成代码...
+c:\learning\数据结构\07022018\bst.cpp(18): warning C4715: “BST_Search”: 不是所有的控件路径都返回值
+c:\learning\数据结构\07022018\bst.cpp(131): warning C4715: “BST_Delete”: 不是所有的控件路径都返回值
+  07022018.vcxproj -> C:\learning\数据结构\Debug\07022018.exe
