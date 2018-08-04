@@ -11,7 +11,6 @@ int printMaxNumRecursion(char* num,int len,int idx);  //lenÊÇ½áÊøÌõ¼ş£¬´Ó0(µÚÒ»Î
 //len = 2; ÏÈnum[0] = 0;¿ªÊ¼£¬µİ¹é£¬idx=0£¬num[idx+1]=0,1,2,~9,½áÊøÌõ¼şÊÇidx = len-1,×îºó´ı´òÓ¡µÄ¾ÍÊÇ00,01,02~09,´òÓ¡µÄÊ±ºòÈ¥µô¿ªÍ·µÄ0
 void print(char* num);  //´òÓ¡Êı×Ö
 void test(int n);
-#if 1
 int main()
 {
 	test(1);
@@ -20,9 +19,7 @@ int main()
 	cout<<endl;
 	test(3);
 	cout<<endl;
-	system("pause");
 }
-#endif
 int printMaxNum(int n)
 {
 	if(n<=0)

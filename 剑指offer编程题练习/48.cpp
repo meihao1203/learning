@@ -5,7 +5,6 @@
 //这种方法要有三个类
 
 //思路二
-#if 0
 #include<iostream>
 using namespace std;
 class A
@@ -34,7 +33,6 @@ int main()
 	B b;
 	system("pause");
 }
-#endif
 //A()
 //A()
 //B()

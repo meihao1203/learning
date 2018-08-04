@@ -6,7 +6,6 @@
 //正好是后一个节点
 #include<iostream>
 using namespace std;
-#if 0
 typedef struct BinaryTree
 {
 	int data;
@@ -32,7 +31,6 @@ int main()
 	test4();
 	cout<<endl;
 	test5();
-	system("pause");
 }
 
 void test()
@@ -233,7 +231,6 @@ void bstToDoubleList(pBinaryTreeNode& binary,binaryTreeNode*& pre)
 	pre = pcur;  //更新记录上一次访问的指针，因为下面要访问递归遍历访问binary->rchild了
 	bstToDoubleList(pcur->rchild,pre);   //这里出问题了，前面修改了指针
 }
-#endif
 //中序遍历：4 6 8 10 12 14 16
 //双向链表正向遍历：4 6 8 10 12 14 16
 //双向链表反向遍历：16 14 12 10 8 6 4

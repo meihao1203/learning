@@ -1,7 +1,6 @@
 //题目42：输入一个英文句子，翻转句子中单词的顺序，但单词内只读的顺序不变。标点符号和普通字母一样处理。
 //eg："I am a student."，"student. a am I"
 //思路：先对这个字符串翻转，然后再对每一个单词翻转.
-#if 0
 #include<iostream>
 using namespace std;
 void reverse(char* pBegin,char* pEnd);
@@ -11,7 +10,6 @@ int main()
 {
 	char str[] = "  I  am a student.  ";  //这里是常量字符串const char*，存放在文字常量区，是不能交换的。
 	test(str);
-	system("pause");
 }
 void test(char* str)
 {
@@ -62,7 +60,6 @@ void reverse(char* pBegin,char* pEnd)
 		--pEnd;
 	}
 }
-#endif
-  //I  am a student.
-  //student. a am  I
-  //I  am a student.
+ //I  am a student.
+ //student. a am  I
+ //I  am a student.

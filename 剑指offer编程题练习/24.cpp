@@ -4,13 +4,11 @@
 //判断，如果右子树结点中有小于根结点的，返回false;左右子树又是一棵树，又可以采采用递归接着遍历
 #include<iostream>
 using namespace std;
-#if 1
 bool isPostTraversal(int* arr,int length);
 void test();
 int main()
 {
 	test();
-	system("pause");
 }
 bool isPostTraversal(int* arr,int length)
 {
@@ -51,9 +49,7 @@ void test()
 	int arr4[] = {5,4,6,8,7};
 	cout<<isPostTraversal(arr4,5)<<endl;
 }
-#endif
 //1
 //0
 //0
 //1
-//请按任意键继续. . .

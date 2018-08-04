@@ -7,9 +7,9 @@
 //由于最高位为2，又可以分成1346~11345和11346~21345。每一段数字中，选择其中一位是1，其余三位可以在0~9这10个数字
 //中任意选择，最终2*4*10^3=2000次。
 //最后1~1345中可以递归求得，这就是最开始为什么要把21345分成1~1345和1346~21345
-#if 0
 //时间复杂度O(logn)
 #include<iostream>
+#include<string.h>
 using namespace std;
 int NumberOf1Between1AndN(int n);
 int NumberOf1(const char* strN);
@@ -27,7 +27,6 @@ int main()
 
 	ret = NumberOf1Between1AndN(19); 
 	cout<<ret<<endl;
-	system("pause");
 }
 int NumberOf1Between1AndN(int n)
 {
@@ -74,7 +73,6 @@ int PowerBase10(unsigned int n)
 	}
 	return result;
 }
-#endif
 //18821
 //821
 //1

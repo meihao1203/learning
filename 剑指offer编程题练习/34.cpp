@@ -9,7 +9,6 @@
 //每一个丑数乘以2都小于已有最大丑数，之后的都大于。我们只需要记录这个丑数在数组中的位置；
 //对于3和5也有这样的T3和T5。T2,T3,T5记录的是数组中的位置
 //T2之前的丑数乘以2都小于等于*T2，T2之后的丑数乘以2都大于*T2。T3和T5也一样
-#if 0
 #include<iostream>
 using namespace std;
 bool isUglyNumber(int num);
@@ -35,7 +34,6 @@ int main()
 
 	test(1500);
 	cout<<endl;
-	system("pause");
 }
 void test(int index)
 {
@@ -87,7 +85,6 @@ int min(int one,int two,int three)
 {
 	return (one<two)?(one<three?one:three):(two<three?two:three);
 }
-#endif
 //1 2 3 4
 //4
 //

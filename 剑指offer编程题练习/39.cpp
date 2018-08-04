@@ -1,7 +1,6 @@
 //题目39：输入一棵二叉树的根结点，求该树的深度。从根结点到叶节点依次经过的结点（含根，叶节点）形成树的
 //一条路径，最长路径的长度为树的深度
 //思路：前序遍历，根结点的深度就等于左右子树的最高高度+1，叶子结点左右子树为null，高度就是1
-#if 0
 #include<iostream>
 using namespace std;
 typedef struct BinaryTree
@@ -24,7 +23,6 @@ int main()
 	test3();
 	cout<<endl;
 	test4();
-	system("pause");
 }
 void test()
 {
@@ -93,7 +91,6 @@ int binaryTreeDepth(const pBinaryTreeNode& binary)
 	else 
 		return ( leftDepth<rightDepth?(leftDepth+1):(rightDepth+1) );
 }
-#endif 
 //4
 //
 //0

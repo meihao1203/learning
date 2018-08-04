@@ -2,8 +2,9 @@
 //输入n，打印出s的所有可能的值出现的概率。
 //思路：递归；先把n个骰子分为两堆：第一堆只有一个，另外一个有n-1个。单独的那一个有可能出现1-6的点数。
 //依次，后面的n-1个也可以分成两堆。把单独的那一个的数值和最开始那一个相加。。。依次递归，出口就是最后划分的那一堆骰子为0
-#if 0
 #include<iostream>
+#include<string.h>
+#include<cmath>
 using namespace std;
 void probability(int* proArr,int cnt,int remainCnt,int sum);   
 //第一个参数是数组，用来存放每个数出现的概率，第二个数是骰子数，第三个是第二堆的骰子数，最后一个是前面一堆骰子的点数和
@@ -19,7 +20,6 @@ int main()
 
 	test(3);
 	cout<<endl;
-	system("pause");
 }
 void test(int cnt)
 {
@@ -61,7 +61,6 @@ void probability(int* proArr,int cnt,int remainCnt,int sum)
 		probability(proArr,cnt,remainCnt-1,sum+idx);
 	}
 }
-#endif
 //sum is 1 appear 1 times and probability is 0.166667
 //sum is 2 appear 1 times and probability is 0.166667
 //sum is 3 appear 1 times and probability is 0.166667

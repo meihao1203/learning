@@ -1,7 +1,6 @@
 ﻿//题目37：输入两个链表，找出它们的第一个公共节点。
 //思路：两个单链表有公共结点就意味着有一些节点重合。首先遍历求出两个链表的长度，长的链表
 //先走多出来的步数，之后两个链表同时开始遍历，直到遇到相同的节点。
-#if 0
 #include<iostream>
 using namespace std;
 typedef struct node
@@ -25,7 +24,6 @@ int main()
 	cout<<endl;
 
 	test2();  //空指针
-	system("pause");
 }
 void test(pList first,pList second)
 {
@@ -159,7 +157,6 @@ int lengthOfList(pList List)
 	}
 	return len;
 }
-#endif
 //1->2->3->4->5->NULL
 //6->4->5->NULL
 //4(5)

@@ -3,7 +3,6 @@
 #include<iostream>
 #include<string>
 #include<queue>
-#if 0
 using namespace std;
 typedef struct BinaryTree
 {
@@ -90,7 +89,6 @@ void levelTraversal(const pBinaryTreeNode& binary)
 	}
 	return;
 }
-#endif
 //原二叉树前序遍历：A B D E C F
 //原二叉树中序遍历：D B E A F C
 //层序遍历：A B C D E F

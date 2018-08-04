@@ -6,7 +6,6 @@
 //出口就是进位为0，表示所有进位都加完了
 #include<iostream>
 using namespace std;
-#if 0
 int add(int num1,int num2);
 void test(int num1,int num2);
 int main()
@@ -23,7 +22,6 @@ int main()
 	test(-1,2);
 	cout<<endl;
 
-	system("pause");
 }
 void test(int num1,int num2)
 {
@@ -43,7 +41,6 @@ int add(int num1,int num2)
 	}while(num2!=0);  //进位不为0
 	return sum;
 }
-#endif
 //22
 //
 //3

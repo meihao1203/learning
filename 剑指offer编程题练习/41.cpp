@@ -2,7 +2,6 @@
 //如果有多对数字的和等于s，输出任意一对即可。
 //eg：{1,2,4,7,11,15}和数字15,4+11=15。破费
 //思路：定义两个指针，一个指向数组开头一个指向结尾，两个位置的数相加和我们要得到的数进行比较，决定偏移哪个指针
-#if 0
 #include<iostream>
 using namespace std;
 bool findNumberWithSum(int* arr,int length,int sum,int& num1,int& num2);
@@ -20,7 +19,6 @@ int main()
 	int arr3[] = {1,2,4,7,11,15};
 	test(arr3,6,20);
 	cout<<endl;
-	system("pause");
 }
 void test(int* arr,int length,int sum)
 {
@@ -54,7 +52,6 @@ bool findNumberWithSum(int* arr,int length,int sum,int& num1,int& num2)
 	}
 	return flag;
 }
-#endif
 //4 + 11 = 15
 //
 //1 + 2 = 3

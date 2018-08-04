@@ -5,7 +5,6 @@
 //如果下一个数字和我们之前保存的数字不同，则次数减1；
 //如果次数为0，我们就保存下一个数字，并把次数设置为1。由于我们要找到的数字出现的次数比其他所有
 //数字出现的次数之和还要多，那么要找到的数字肯定是最后一次把次数设置为1时对应的数字。
-#if 0
 #include<iostream>
 using namespace std;
 int findMoreThanHalt(int* arr,int length);
@@ -29,7 +28,6 @@ int main()
 	test(arr4,4);
 	cout<<endl;
 
-	system("pause");
 }
 void test(int* arr,int length)
 {
@@ -74,7 +72,6 @@ bool isMoreThanHalt(int* arr,int length,int value)
 		 return true;
 	 return false;
 }
-#endif
 //-1
 //
 //1

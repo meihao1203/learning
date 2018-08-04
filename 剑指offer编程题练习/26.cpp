@@ -5,7 +5,6 @@
 //		分三步，第一个复制结点和m_pNext,同时把复制的结点链接到被赋值节点之后
 //		第二步：复制m_pSibling
 //      前两步得到的链表拆分成两个，奇数点得到的是原始链表，偶数点得到的是复制后的链表
-#if 0
 #include<iostream>
 #include<stack>
 typedef struct node
@@ -38,7 +37,6 @@ int main()
 	test3();
 	cout<<endl<<endl;
 	test4();
-	system("pause");
 }
 void test1()
 {
@@ -208,7 +206,6 @@ ComplexListNode* Clone(ComplexListNode* pHead)
 	ComplexListNode* newList = ReturnNewList(pHead);
 	return newList;
 }
-#endif
 //1(3) -> 2(5) -> 3(NULL) -> 4(2) -> 5(NULL) -> NULL
 //1(3) -> 2(5) -> 3(NULL) -> 4(2) -> 5(NULL) -> NULL
 //

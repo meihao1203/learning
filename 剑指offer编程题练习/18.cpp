@@ -3,7 +3,6 @@
 #include<iostream>
 #include<string>
 using namespace std;
-#if 0
 typedef struct BinaryTree
 {
 	char data;
@@ -24,7 +23,6 @@ int main()
 	test3();
 	test4();
 	test5();
-	system("pause");
 }
 void test()
 {
@@ -135,7 +133,6 @@ bool isSubTree(const pBinaryTreeNode& tree1,const pBinaryTreeNode& tree2)
 	//如果相等，就要判断子树结点
 	return isSubTree(tree1->lchild,tree2->lchild) && isSubTree(tree1->rchild,tree2->rchild);
 }
-#endif
 //tree1=889##24##7##7## tree2=89##2##
 //1
 //tree1=889##34##7##7## tree2=89##2##

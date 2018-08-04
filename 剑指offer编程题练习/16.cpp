@@ -1,5 +1,4 @@
 //题目16：定义一个函数，输入一个链表的头结点，反转该链表并输出反转后链表的头结点。
-#if 0
 #include<iostream>
 using namespace std;
 typedef struct node
@@ -12,7 +11,6 @@ pList reverseList(pList* head);
 void test(pList* head);
 int main()
 {
-#if 1
 	node* node1 = new node;
 	node1->data = 1;
 	node1->next = NULL;
@@ -38,12 +36,11 @@ int main()
 	pList head2 = node6;
 	node6->data = 8;
 	node6->next = NULL;
-#endif
+
 	test(&head1);
 	test(&head2);  //只有一个结点
 	pList null  = NULL;
 	test(&null);
-	system("pause");
 }
 void test(pList* head)
 {
@@ -87,4 +84,3 @@ pList reverseList(pList* head)
 	}
 	return newList;
 }
-#endif

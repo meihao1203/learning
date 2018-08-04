@@ -5,7 +5,6 @@
 //这里有两个不相同，也可以异或来做。最终的结果就是两个数的异或结果，从右到左找出第一个1，然后在把数组进行分组。
 //二进制数这一位为1的和不为1的，这两个不同的数就被单独分开，再采用异或就能找出。
 //进一步优化，这一位为1的数执行异或操作，为0的数执行异或操作，就能分别得到两个数，省去了数组分组
-#if 0
 #include<iostream>
 using namespace std;
 int findAppearOnceNumber(int* arr,int length,int& num1,int& num2);
@@ -25,7 +24,6 @@ int main()
 	int* arr3 = NULL;
 	test(arr3,0);
 	cout<<endl;
-	system("pause");
 }
 void test(int* arr,int length)
 {
@@ -76,7 +74,6 @@ bool isBitOne(int num,int bitNumber)
 	num = num>>bitNumber;
 	return num&1;
 }
-#endif
 //6 4
 //
 //1 2

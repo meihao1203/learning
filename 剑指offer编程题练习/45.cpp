@@ -4,12 +4,10 @@
 //思路：这就是一个约瑟夫(Josephuse)环问题，可以模拟出一个链表，然后进行删除。如果可以用标准模板库，直接使用list
 //只不过要记得最后到达迭代器末尾要重新修改指向头。
 //n个数字每次删除第m个数字。时间复杂度O(mn)，空间复杂度O(m)
-#if 0
 #include<iostream>
 #include<list>
 using namespace std;
 //第一种做法
-#if 0
 int lastReamining(unsigned int n,unsigned int m)
 {
 	if(n<1||m<1)
@@ -35,7 +33,6 @@ int lastReamining(unsigned int n,unsigned int m)
 	}
 	return *(current);
 }
-#endif
 // P248有推导公式
 //f(n,m)表示1~n的元素里面一次删除第m个元素，最后剩的那一个元素
 //当n=1时：f(n,m) = 0;  n>1时：f(n,m) = [f(n-1,m) + m]%n。
@@ -60,7 +57,6 @@ int main()
 	cout<<LastRemaining(0,0)<<endl;
 	system("pause");
 }
-#endif
 //3
 //2
 //4

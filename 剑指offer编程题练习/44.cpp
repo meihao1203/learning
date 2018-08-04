@@ -5,7 +5,6 @@
 //等于0的数量，如果等于说明可以用0来代替对应的数值使得5张牌的排序连续，否则5张牌不是连续的。
 //在遍历的过程中如果两张牌相等，直接返回失败。
 //时间复杂度O(n*logn)
-#if 0
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -30,7 +29,6 @@ int main()
 	int arr3[] = {0,2,0,4,6};  //{0,0,2,4,6}
 	test(arr3,5);
 	cout<<endl;
-	system("pause");
 }
 void test(int* arr,int length)
 {
@@ -79,7 +77,6 @@ int compare(const void* left,const void* right)
 {
 	return *(int*)left - *(int*)right;
 }
-#endif
 //0 3 1 4 5
 //1
 //0 1 3 4 5

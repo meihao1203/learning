@@ -3,9 +3,9 @@
 //字符的ASCII码占一个字节，有256种可表示的字符，这里不再仅限于26个英文字符。
 //建立一个简单的hash表，一个整数4个字节，2^2*2^8=1K大小，第一次全部初始化为0。
 //遍历字符串，每个字符代表的ASCII码做为数组下标，对应的值+1.最后再次遍历字符串，找出第一个出现次数为1的字符。
-#if 1
 #include<iostream>
 #include<string>
+#include<string.h>
 using namespace std;
 char findFirstAppearOneceChar(const char* str);
 void test(const char* str,char expected);
@@ -55,4 +55,3 @@ char findFirstAppearOneceChar(const char* str)
 	}
 	return -1;
 }
-#endif

@@ -5,8 +5,8 @@
 //假设数组{7,5,6,4}->开始划分->{7,5},{6,4}->{7}{5}{6}{4}->开始合并(7,5一个逆序)(6,4在一个逆序)
 //->{5,7}{4,6}(这里合并的过程中，7>6,说明有两个逆序，5>4一个逆序)->{4,5,6,7};最后统计5个逆序
 //空间复杂度O(n),因为最后要用一个一样的数组来存放排序好的数组
-#if 0
 #include<iostream>
+#include<string.h>
 using namespace std;
 int inversePairs(int* arr,int length);
 int inversePairsMerge(int* arr,int* sortArr,int start,int end);
@@ -17,7 +17,6 @@ int main()
 	test(arr,2);
 	cout<<endl;
 
-	system("pause");
 }
 void test(int* arr,int length)
 {
@@ -79,7 +78,6 @@ int inversePairsMerge(int* arr,int* sortArr,int start,int end)
 		sortArr[sortArrIndex--] = arr[rightIndex--];
 	return leftCount + rightCount + inversePairsCount;
 }
-#endif
 //1 5 7 4 6
 //1 4 5 6 7
 //7

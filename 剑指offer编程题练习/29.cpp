@@ -26,7 +26,6 @@ int main()
 	test(arr4,4);
 	cout<<endl;
 
-	system("pause");
 }
 void test(int* arr,int length)
 {

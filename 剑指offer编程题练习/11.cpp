@@ -9,15 +9,12 @@ double power(double base,double exponent);
 bool equal(double num1,double num2); //判断两个double类型的数是不是相等
 double unsignedPower(double base,unsigned int absExponent);  //对power函数里对输入处理过后进行次方运算
 void test(double base,double exponent,double expected); 
-#if 0
 int main()
 {
 	test(4.0,2.0,16.0);
 	test(0.0,-1,-1);
 	test(2.0,-2,0.25);
-	system("pause");
 }
-#endif 
 double power(double base,double exponent)
 {
 	if(equal(base,0.0)&&exponent<0)  // 2，基数为0，次方负数 失败

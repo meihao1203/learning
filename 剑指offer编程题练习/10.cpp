@@ -5,7 +5,6 @@
 using namespace std;
 int num1Cnt(int n);
 void test(int n,int expected);
-#if 0
 int main()
 {
 	test(13,3);  //1101 - 1 = 1100 & 1101 = 1100 - 1 = 1011 & 1100 = 1000
@@ -13,7 +12,6 @@ int main()
 	test(0xffffffff,32);
 	system("pause");
 }
-#endif
 int num1Cnt(int n)
 {
 	int count = 0;

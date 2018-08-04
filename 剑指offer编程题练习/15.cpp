@@ -1,6 +1,5 @@
 //题目15：输入一个链表，输出该链表中倒数第k个节点。
 //注意代码的鲁棒性
-#if 0 
 #include<iostream>
 using namespace std;
 typedef struct node
@@ -14,7 +13,6 @@ void test(pList head,int k);
 
 int main()
 {
-#if 1
 	node* node1 = new node;
 	node1->data = 1;
 	node1->next = NULL;
@@ -40,7 +38,7 @@ int main()
 	pList head2 = node6;
 	node6->data = 8;
 	node6->next = NULL;
-#endif
+
 	print(head1);
 	print(head2);
 	test(head1,3);
@@ -97,7 +95,6 @@ void test(pList head,int k)
 		return ;
 	cout<<res->data<<endl;
 }
-#endif
 //相关题目
 //求链表的中间节点，如果链表中结点总数为奇数，返回中间结点；偶数返回中间两个结点的任意一个。
 //思路：定义两个指针，同时从链表的头结点出发，一个指针一次走一步，另一个指针一次走两步。

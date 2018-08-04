@@ -11,10 +11,8 @@ typedef struct Node
 int deleteListNode(List* head,node* deleteNode);
 void printList(List head);
 void test(List* head,node* deleteNode);
-#if 0
 int main()
 {
-#if 1
 	node* node1 = new node;
 	node1->data = 1;
 	node1->next = NULL;
@@ -40,7 +38,7 @@ int main()
 	List head2 = node6;
 	node6->data = 8;
 	node6->next = NULL;
-#endif
+
 	printList(head1);
 	printList(head2);
 	test(&head1,node3);  //删除中间节点
@@ -50,9 +48,7 @@ int main()
 	test(&head3,node2);   //指针为空
 	printList(head1);
 	printList(head2);
-	system("pause");
 }
-#endif
 void printList(List head)
 {
 	if(NULL==head)

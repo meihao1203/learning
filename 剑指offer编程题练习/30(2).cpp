@@ -1,6 +1,5 @@
 //题目30：输入n个整数，找出其中最小的k个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数组是1,2,3,4
 //思路：前面的复杂度O(n),但是修改了数组，这里用红黑树来实现，复杂度O(n*logn)
-#if 0
 #include<iostream>
 #include<set>
 #include<functional>
@@ -46,7 +45,6 @@ void findLeastElements(int* arr,int length,int k)
 		cout<<elem<<" ";
 	cout<<endl;
 }
-#endif
 //4 3 2 1
 //
 //4 1

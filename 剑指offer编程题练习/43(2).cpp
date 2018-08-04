@@ -5,8 +5,9 @@
 //因为在这几种情况下都能通过另外一个骰子出现对应的数字达到和为n。
 //第二个数组可能出现的和2,3,4,5,6,7,8,9,10,11,12；数组就是(前面两个0,0){1,2,3,4,5,6,5,4,3,2,1};
 //和为7就等于上一个数组下标为6+5+4+3+2+1 = 1+1+1+1+1+1 = 6
-#if 1
 #include<iostream>
+#include<string.h>
+#include<math.h>
 using namespace std;
 #define maxDiceNum 6  //提高代码的扩展性，以后骰子的点数变为7或其他啊位数，就只要少量修改
 void printProbabilityOfDice(int cnt);
@@ -69,7 +70,6 @@ void printProbabilityOfDice(int cnt)
 		delete []arr[0];
 		delete []arr[1];
 }
-#endif
 //sum is 1 appear 1 times and probability is 0.166667
 //sum is 2 appear 1 times and probability is 0.166667
 //sum is 3 appear 1 times and probability is 0.166667

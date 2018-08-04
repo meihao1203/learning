@@ -1,5 +1,4 @@
 //µÚÆßÕÂ£¬ÃæÊÔ°¸Àı1
-#if 0
 #include<iostream>
 using namespace std;
 class A
@@ -20,5 +19,4 @@ int main(int argc,char** argv)
 	a.Print();
 	system("pause");
 }
-#endif
 //n1: -858993458,n2: 0

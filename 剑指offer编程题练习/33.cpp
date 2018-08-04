@@ -3,8 +3,8 @@
 //思路：把数组元素放到字符串数组里面，使用库函数qsort排序，排序规则就是任意两个字符串拼接在一起，那种拼接法
 //最终得到的字符串小。如例子中的一样，321 32 2
 //时间复杂度O(nlogn)
-#if 1
 #include<iostream>
+#include<string.h>
 using namespace std;
 int compare(const void* left,const void* right);
 void MinNumber(int* arr,int length);
@@ -75,7 +75,6 @@ int compare(const void* left,const void* right)
 	delete rightLeft;
 	return ret;
 }
-#endif
 //321323
 //
 //12331231

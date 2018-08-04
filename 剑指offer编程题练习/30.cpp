@@ -1,7 +1,6 @@
 //题目30：输入n个整数，找出其中最小的k个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数组是1,2,3,4
 //思路：利用快速排序思想，找个第k个位置的元素后，k前面的元素都比k小，输出就行;
 //这种解法会改变数组,复杂度O(n)
-#if 0
 #include<iostream>
 using namespace std;
 void findLeastElements(int* arr,int length,int k);
@@ -71,7 +70,6 @@ int divide(int* arr,int left,int right)
 	}
 	return left;
 }
-#endif
 //4 3 1 2
 //
 //1 2

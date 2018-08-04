@@ -2,7 +2,6 @@
 //思路：注意边界条件和结束条件
 //每次都是矩阵的对角开始打印，(0,0)-(1,1)-(2,2)
 //设置遍历起始条件，和终止条件
-#if 0
 int printMatrix(int **arr,int rows,int columns);   //动态定义的二维数组才能这样传值
 //int printMatrix(int (*arr)[4],int rows,int columns);  //普通数组这样传值
 void test(int **arr,int rows,int columns);
@@ -11,7 +10,6 @@ int printTwoMatrix(int **arr,int rows,int columns);
 using namespace std;
 int main()
 {
-#if 1
 	int** arr = new int*[3];
 	arr[0] = new int[3];
 	arr[1] = new int[3];
@@ -25,26 +23,24 @@ int main()
 			*(*(arr + idx) + iidx) = total ;  //也可以这样写
 		}
 	}
-#endif
-#if 1
+
 	int** arr1 = new int*[1];
 	arr1[0] = new int[2];
 	arr1[0][0] = 1;
 	arr1[0][1] = 2;
-#endif
-#if 1
+
 	int** arr2 = new int*[2];
 	arr2[0] = new int[1];
 	arr2[1] = new int[1];
 	arr2[0][0] = 1;
 	arr2[1][0] = 2; 
-#endif
-#if 1
+
+
 	int** arr3 = new int*[1];
 	arr3[0] = new int[1];
 	arr3[0][0] = 1;
-#endif
-#if 1
+
+
 	int** arr4 = new int*[2];
 	arr4[0] = new int[2];
 	arr4[1] = new int[2];
@@ -52,8 +48,8 @@ int main()
 	arr4[0][1] = 2;
 	arr4[1][0] = 3;
 	arr4[1][1] = 4;
-#endif
-#if 1
+
+
 	int** arr5 = new int*[4];
 	arr5[0] = new int[4];
 	arr5[1] = new int[4];
@@ -75,7 +71,7 @@ int main()
 	arr5[3][1] = 14;
 	arr5[3][2] = 15;
 	arr5[3][3] = 16;
-#endif
+
 	test(arr,3,3);
 	cout<<endl;
 	test(arr1,1,2);  // 第一次调试这里打印1,2,1；
@@ -88,7 +84,6 @@ int main()
 	test(arr4,2,2);
 	cout<<endl;
 	test(arr5,4,4);
-	system("pause");
 }
 int printMatrix(int **arr,int rows,int columns)
 {
@@ -151,4 +146,3 @@ int printTwoMatrix(int **arr,int rows,int columns)
 	}
 	return 0;
 }
-#endif

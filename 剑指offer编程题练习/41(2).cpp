@@ -3,7 +3,6 @@
 //思路：参考40题的思路，连续的整数序列，假设最初两个数是1和2，用两个变量记录，如果1+2<给定的数，记录大数的变量+1，
 //加到相同就输出，然后记录大数变量继续+1。如果加完大于给定的数，就增加记录小数的变量。
 //终止条件就是指示小数的变量>给定的数+1除以2。因为最少序列有两个数且连续
-#if 0
 #include<iostream>
 using namespace std;
 void findContinueSequence(int num);
@@ -16,7 +15,6 @@ int main()
 
 	test(7);
 	cout<<endl;
-	system("pause");
 }
 void test(int num)
 {
@@ -53,7 +51,6 @@ void findContinueSequence(int num)
 	}
 	return ;
 }
-#endif
 //1 2 3 4 5
 //4 5 6
 //7 8

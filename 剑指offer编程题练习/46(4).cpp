@@ -3,7 +3,6 @@
 //解法四：利用模板和模板特化来实现递归
 #include<iostream>
 using namespace std;
-#if 0
 template<int num>  //缺点，模板非类型参数表达式必须是int类型，代表一个常量
 struct sum
 {
@@ -20,7 +19,6 @@ int main()
 	int n = 100;
 	sum<100> b;
 	cout<<b.Sum<<endl; 
-	system("pause");
 }
 //5050
 

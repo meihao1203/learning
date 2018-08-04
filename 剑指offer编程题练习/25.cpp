@@ -6,7 +6,6 @@
 #include<vector>
 #include<string>
 using namespace std;
-#if 0
 #define BinaryTreeNode_ValueType int
 typedef struct BinaryTree
 {
@@ -20,7 +19,6 @@ void test();
 int main()
 {
 	test();
-	system("pause");
 }
 void createBinaryTree(pBinaryTreeNode& binary,int*& arrPtr,int length)
 {
@@ -80,7 +78,6 @@ void fingPath(const pBinaryTreeNode& root,vector<BinaryTreeNode_ValueType>& path
 	currentSum -= root->data;
 	path.pop_back();
 }
-#endif
 //Ç°Ðò±éÀú£º10 5 4 7 12
 //10 5 7 sum = 22
 //10 12 sum = 22

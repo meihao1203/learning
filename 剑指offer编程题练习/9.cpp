@@ -2,14 +2,11 @@
 #include<iostream>
 using namespace std;
 int fibonacci(unsigned int n);
-#if 0
 int main()
 {
 	int res = fibonacci(3);
 	cout<<res<<endl;
-	system("pause");
 }
-#endif
 int fibonacci(unsigned int n)
 {
 	if(n<0||0==n)

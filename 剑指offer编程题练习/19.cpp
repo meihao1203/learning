@@ -3,7 +3,6 @@
 #include<iostream>
 #include<string>
 using namespace std;
-#if 0
 typedef struct BinaryTree
 {
 	char data;
@@ -21,7 +20,6 @@ int main()
 	test();
 	test2();  //空树
 	test3();  //一个结点
-	system("pause");
 }
 void test()
 {
@@ -111,7 +109,6 @@ void mirrorBinaryTree(pBinaryTreeNode& binary)
 	mirrorBinaryTree(binary->lchild);
 	mirrorBinaryTree(binary->rchild);
 }
-#endif
 //原二叉树：D B E A F C
 //镜像二叉树：C F A E B D
 //原二叉树：

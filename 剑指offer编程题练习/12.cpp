@@ -1,7 +1,6 @@
 //输入数字n,按顺序打印出从1到最大的n位十进制数。
 //比如输入3，打印1、2、3^999
 //陷阱:这个数很大，大到long int都无法保存
-#if 0
 #include<iostream>
 #include<string.h>
 using namespace std;
@@ -17,7 +16,6 @@ int main()
 	cout<<endl;
 	test(3);
 	cout<<endl;
-	system("pause");
 }
 int printMaxNum(int n)
 {
@@ -78,4 +76,3 @@ void test(int n)
 {
 	printMaxNum(n);
 }
-#endif

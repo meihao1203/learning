@@ -5,7 +5,6 @@
 using namespace std;
 int min(int* arr,int length);
 int minInorder(int* arr,int idx1,int idx2);
-#if 1
 int main()
 {
 	int arr[] = {3,4,1,2,3};
@@ -18,9 +17,7 @@ int main()
 	{
 		cout<<"Òì³£"<<endl;
 	}
-	system("pause");
 }
-#endif
 int min(int* arr,int length)
 {
 	if(NULL==arr||length<=0)

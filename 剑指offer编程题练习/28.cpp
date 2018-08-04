@@ -3,7 +3,6 @@
 //思路：从字符串的第一个字符开始，依次和后面的所有元素交换
 //交换完之后，再以后面的字符串中的第一个元素开始，和前面一样，交换后面字符串的多有元素
 //就是一个递归过程
-#if 0
 #include<iostream>
 using namespace std;
 void test(char* str);
@@ -26,7 +25,6 @@ int main()
 	test(str4);
 	cout<<endl;
 
-	system("pause");
 }
 void test(char* str)
 {
@@ -54,7 +52,6 @@ void permutationStr(char* str,char *beginStr)
 		*ch = tmp;
 	}
 }
-#endif
 //origin str=abc
 //abc
 //acb

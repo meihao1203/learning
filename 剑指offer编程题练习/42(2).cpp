@@ -1,7 +1,7 @@
 ////题目42(扩展)：字符串左旋转，把字符串前面的若干个字转移到字符串的尾部。
 //eg："abcdefg"和数字2，-> "cdefgab"
-#if 0
 #include<iostream>
+#include<string.h>
 using namespace std;
 void reverse(char* pBegin,char* pEnd);
 void leftReverse(char* pstr,int n);
@@ -16,7 +16,6 @@ int main()
 	test(str2,4);
 	cout<<endl;
 
-	system("pause");
 }
 void test(char* str,int n)
 {
@@ -56,7 +55,6 @@ void reverse(char* pBegin,char* pEnd)
 		--pEnd;
 	}
 }
-#endif
 //abcdefg
 //cdefgab
 //

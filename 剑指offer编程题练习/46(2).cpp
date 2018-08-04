@@ -1,7 +1,6 @@
 //题目46：求1+2+3+……+n，要求不能使用乘除法，for,while,if,else,switch,case等关键字及条件判断语句(A?B:C)
 //思路：
 //解法二：利用虚函数特性来模拟递归
-#if 0
 #include<iostream>
 using namespace std;
 class A;
@@ -28,7 +27,5 @@ int main()
 	arr[1] = new B;
 	int n = 100;
 	cout<<arr[1]->sum(n)<<endl;
-	system("pause");
 }
-#endif
 //5050

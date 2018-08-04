@@ -6,6 +6,7 @@
 //递归出口：长度=0或者字符串到达末尾。
 #include<iostream>
 #include<string>
+#include<string.h>
 using namespace std;
 void Combination(char* str,int length);
 void combination(char* str,int length,string result);
