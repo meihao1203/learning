@@ -108,3 +108,5 @@ int main()
 	cout<<endl;
 	//system("pause");
 }
+//11 10 9 9 8 
+//11 10 9 9 8 8 8 7 7 6 
