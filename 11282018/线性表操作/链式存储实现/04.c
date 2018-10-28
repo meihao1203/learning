@@ -1,5 +1,4 @@
 //从线性表中删除所有值重复的元素
-#if 0
 #include<stdio.h>
 #include<stdlib.h>
 typedef struct Node
@@ -129,6 +128,5 @@ int main()
 	test();
 	system("pause");  //stdlib.h
 }
-#endif
 //1 3 5
 //请按任意键继续. . .

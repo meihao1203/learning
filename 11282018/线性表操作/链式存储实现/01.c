@@ -1,5 +1,4 @@
 //1、从线性表中删除具有最小值的元素，空出的位置由最后一个元素填补(链表删除为什么还要填补)
-#if 0
 #include<stdio.h>
 #include<stdlib.h>
 typedef struct Node
@@ -103,6 +102,5 @@ int main()
 	test();
 	system("pause");  //stdlib.h
 }
-#endif
 //2 3 5 2
 //请按任意键继续. . .

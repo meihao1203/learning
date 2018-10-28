@@ -1,5 +1,4 @@
 //5、约瑟夫问题的顺序存储解决方法
-#if 0
 #include<stdio.h>
 #include<stdlib.h>
 typedef struct Node
@@ -119,6 +118,5 @@ int main()
 	test();
 	system("pause");  //stdlib.h
 }
-#endif
 //5
 //请按任意键继续. . .

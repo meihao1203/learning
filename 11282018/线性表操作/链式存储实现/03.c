@@ -1,5 +1,4 @@
 //将两个有序线性表合并为一个
-#if 0
 #include<stdio.h>
 #include<stdlib.h>
 typedef struct Node
@@ -100,6 +99,5 @@ int main()
 	test();
 	system("pause");  //stdlib.h
 }
-#endif
 //1 2 3 4 5
 //请按任意键继续. . .
