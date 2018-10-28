@@ -1,5 +1,4 @@
 //2、从线性表中删除其值在给定值s与t之间的所有元素
-#if 0
 #include<stdio.h>
 #include<stdlib.h>
 int delRangeElement(int* arr,int length,int s,int t)
@@ -33,6 +32,5 @@ int main()
 	test();
 	system("pause");  //stdlib.h
 }
-#endif
 //2 1 5 2
 //请按任意键继续. . .

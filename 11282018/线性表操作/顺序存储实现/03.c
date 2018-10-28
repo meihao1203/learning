@@ -1,5 +1,4 @@
 //将两个有序线性表合并为一个
-#if 0
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -43,6 +42,5 @@ int main()
 	test();
 	system("pause");  //stdlib.h
 }
-#endif
 //1 1 2 3 4 5 6 7 8
 //请按任意键继续. . .

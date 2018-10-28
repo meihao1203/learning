@@ -1,5 +1,4 @@
 //1、从线性表中删除具有最小值的元素，空出的位置由最后一个元素填补
-#if 0 
 #include<stdio.h>
 #include<stdlib.h>
 int delMinElement(int* arr,int length)  //成功返回0，失败返回-1
@@ -32,6 +31,5 @@ int main()
 	test();
 	system("pause");  //stdlib.h
 }
-#endif
 //2 2 3 5 2
 //请按任意键继续. . .
